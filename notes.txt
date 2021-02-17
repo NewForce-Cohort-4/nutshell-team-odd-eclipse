@@ -1,0 +1,22 @@
+
+NUTSHELL
+Future plans: 
+- Events -- could add functionality to have personal calender and community bulletin from which you 
+could add events to your calendar made by friends (or invite people to your events)
+
+- Messages -- private messaging is already in the stretch goals
+
+- Layout and Navigation -- dashboard for now. Splash page and dynamic nav later
+
+------------------------------------------------------------------
+
+THE PLAN
+- Screen Share to: build API, basic HTML layout, add modal for forms, generic CSS, determine login feature
+- Patti - articles: build articlesDataProvider, article.js, articleForm, articleList
+	- delete based on userID and articleID (can only delete articles that you post)
+- Matt - chat messages: build messagesDataProvider, message.js, messageInput, messageList 
+	focus on functionality that updates in realtime
+- Mandy - task list: build taskDataProvider, task.js, taskForm, taskList
+- David - events: building the eventDataProvider, event.js, eventList, eventForm
+
+Meet up to discuss which stretch goals we'd like to implement

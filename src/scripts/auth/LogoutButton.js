@@ -1,11 +1,11 @@
 import { LoginForm } from "./LoginForm.js"
 import { RegisterForm } from "./RegisterForm.js"
 
-const eventHub = document.querySelector(".dashboard")
-const contentTarget = document.querySelector(".dashboard")
+const eventHub = document.querySelector("#dashboard")
+const contentTarget = document.querySelector("#dashboard")
 
 export const LogOutButton = () => {
-    contentTarget.innerHTML += `<button id="logout-button">Log Out</button>`
+    contentTarget.innerHTML += `<button class="btn btn-primary btn-sm" id="logout-button">Log Out</button>`
 }
 
 eventHub.addEventListener("click", (eventObject) => {
@@ -14,7 +14,7 @@ eventHub.addEventListener("click", (eventObject) => {
         sessionStorage.clear()
 
         // clear the DOM
-        document.querySelector(".dashboard").innerHTML = ""
+        document.querySelector("#dashboard").innerHTML = ""
 
         // Reprint the login and register form
         LoginForm()
