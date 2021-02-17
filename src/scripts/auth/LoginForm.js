@@ -38,7 +38,7 @@ const render = () => {
     contentTarget.innerHTML += `
         <section class="login">
             <input id="login__email" type="text" placeholder="Log In With Email">
-            <button id="login__button">Log In</button>
+            <button class="btn btn-primary btn-sm" id="login__button">Log In</button>
         </section>
     `
 }
