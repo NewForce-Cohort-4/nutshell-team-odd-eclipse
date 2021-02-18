@@ -1,7 +1,10 @@
 /* 
- * This module serves to provide a form in a pop-up modal after the "add * event" button is engaged.
+ * DTB
+ * This module serves to provide HTML for each event object
+ * from the local API.
  */
 
+// Build function to build an HTML event card given an event object
 export const eventCard = (eventData) => {
     return `
     <div class="event--card card">

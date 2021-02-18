@@ -1,13 +1,18 @@
 /* 
- * This module serves to provide a form in a pop-up modal after the "add * event" button is engaged.
+ * Author: DTB
+ * This module serves to provide a form in a pop-up modal after the "add 
+ * event" button is engaged.
  */
 
 export const eventForm = () => {
     
-    let popUpTarget = document.querySelector(".modal-content"); 
-    let formPopUpHTML = ""
-        
-    formPopUpHTML += ` 
+    // Define the HTML target for the form: 
+    let popUpTarget = document.querySelector(".modal-content");
+    
+    // Build HTML structure and content for the form. 
+    // Input IDs are used in eventsEventHub.js to build new event objects. 
+    // General structure and styling of the following HTML was taken from Bootstrap.
+    popUpTarget.innerHTML = ` 
         <div class="modal-header">
             <h5 class="modal-title" id="staticBackdropLabel">Create New Event</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -33,6 +38,4 @@ export const eventForm = () => {
         </form>
         </div>
         `
-    console.log(formPopUpHTML)
-    popUpTarget.innerHTML = formPopUpHTML
 }

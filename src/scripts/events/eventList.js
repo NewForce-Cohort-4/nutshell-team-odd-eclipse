@@ -1,15 +1,25 @@
 /* 
- * This module serves to provide a form in a pop-up modal after the "add * event" button is engaged.
+ * Author: DTB
+ * This module serves to print a list of the events 
+ * included in the local API.
  */
+
+// Import functions that will pull data from the API and cache it locally
 import { useEvents, getEvents} from './eventDataProvider.js'
+// Import function to generate HTML for each event object
 import { eventCard } from './event.js'
 
+// Build function to obtain API event data, generate HTML, and print to the DOM.
 export const eventList = () => {
+
+    // Define HTML target location for list of events
     const eventTarget = document.querySelector("#events")
 
+    // Fetch events, cache events locally
     getEvents().then(() => {
         let events = useEvents();
     
+        // Generate HTML using a string-template-literal function to generate an HTML card for each event
         eventTarget.innerHTML = `
             <section>
                 <article class="flex-container-col">
