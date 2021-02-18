@@ -7,7 +7,7 @@ export const getMessages = () => {
     return fetch("http://localhost:8088/messages")
     .then(response => response.json())
     .then((messagesFromAPI) => {
-        console.log(messagesFromAPI)
+        // console.log(messagesFromAPI)
         messages = messagesFromAPI
     })}
 

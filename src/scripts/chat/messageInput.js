@@ -4,10 +4,11 @@ import { messages } from './messageList.js'
 export const messageForm = () => {
     const composeMessage = document.querySelector("#messages")
     composeMessage.innerHTML = `
+    <h2>New Message</h2>
     <input type="date" id="date-text">
-    <input type="text" placeholder="Type Message Here..." id="note-text">
+    <input type="text" placeholder="Type Here..." id="note-text">
     
-    <button id="postMessage">Post Message</button>
+    <button id="postMessage">Save Message</button>
     `
 }
 
@@ -26,7 +27,6 @@ eventHub.addEventListener("click", (clickEvent) => {
             dateOfMessage: dateOfMessage.value,
         }
         console.log(newMessage)
-        console.log(sessionStorage.getItem("activeUser"))
         saveMessage(newMessage)
         .then(getMessages)
     }
