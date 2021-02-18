@@ -1,5 +1,8 @@
 import {LogOutButton} from "./auth/LogoutButton.js"
 
+//Patti imported
+import {ArticleList} from "./Articles/ArticleList.js"
+
 // Imported by DTB to generate a list of events once 
 // a user is logged in.
 import { eventList } from './events/eventList.js'
@@ -10,12 +13,10 @@ import { } from './events/eventsEventHub.js'
 export const Nutshell = () => {
 
     LogOutButton()
-    
+    // Render all your UI components here
+
     // Print the list of events to the DOM
     eventList()
-      // Render all your UI components here
-}
 
-//Patti imported
-import {ArticleList} from "./Articles/ArticleList.js"
-ArticleList()
+    ArticleList()
+}
