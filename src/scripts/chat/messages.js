@@ -1,10 +1,14 @@
 // Dom printing for messages List
 export const message = (messageObject) =>{
-    return `
+    let messageHTML = `
     <section>
     <p>Message: ${messageObject.message}</p>
+    <p>Date: ${messageObject.dateOfMessage}</p>
     <p>User: ${messageObject.userId}</p>
-    <button id="deleteNote--${messageObject.id}">Delete</button>
-    </section>
-    `
+    </section>`
+    // Delete Button appears only for the user who posted 
+        if(messageObject.userId === sessionStorage.getItem("activeUser")){
+        messageHTML += `<button id="deleteNote--${messageObject.id}">Delete</button>`
+    }    
+    return messageHTML
 }

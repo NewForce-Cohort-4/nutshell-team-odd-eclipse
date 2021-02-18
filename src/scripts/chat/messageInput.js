@@ -1,6 +1,6 @@
 import { saveMessage, getMessages } from './messageDataProvider.js'
-import { messages } from './messageList.js'
 
+//Form to fill out for new message
 export const messageForm = () => {
     const composeMessage = document.querySelector("#messages")
     composeMessage.innerHTML = `
@@ -12,6 +12,7 @@ export const messageForm = () => {
     `
 }
 
+// Listening event for saving a new message 
 const eventHub = document.querySelector("#messages")
 eventHub.addEventListener("click", (clickEvent) => {
     if(clickEvent.target.id === "postMessage") {
@@ -29,6 +30,4 @@ eventHub.addEventListener("click", (clickEvent) => {
         console.log(newMessage)
         saveMessage(newMessage)
         .then(getMessages)
-    }
-
-})
+    }})

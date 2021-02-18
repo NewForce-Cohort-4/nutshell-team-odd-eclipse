@@ -10,6 +10,12 @@ export const messages = () => {
         for(let thisMessage of allMessages){
             messageHTML += message(thisMessage)
         }
-        console.log(messageHTML)
         messageList.innerHTML = messageHTML
     })}
+
+    // Delete button action when clicked 
+    const eventHub = document.querySelector("#message-list")
+    eventHub.addEventListener("click", (eventObject) => {
+        if(eventObject.target.id.startsWith("deleteNote--")) {
+            console.log("You Clicked me!")
+        }})
