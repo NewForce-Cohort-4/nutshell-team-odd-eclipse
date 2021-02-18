@@ -1,5 +1,5 @@
 //Author: Patti Perry
-//Purpose: This module creates an HTML of the article that will print to the DOM
+//Purpose: This module creates an HTML representation of the article that will print to the DOM
 
 
 export function Article (articleObject) {

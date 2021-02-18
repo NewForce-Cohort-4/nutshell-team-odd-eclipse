@@ -15,14 +15,11 @@ export const ArticleList = () => {
 
 
        // list of articles that is being identified by the userId
-       
-        const filteredArticles = allArticles.filter((singleArticle) => {
-            
+        const filteredArticles = allArticles.filter((singleArticle) => { 
            return singleArticle.userId == +(sessionStorage.getItem("activeUser"))
        })
-       console.log(filteredArticles)
+       //console.log(filteredArticles)
        
-    
        for(let currentArticle of filteredArticles) {
         articleHTMLString += Article(currentArticle)
        }
@@ -31,4 +28,3 @@ export const ArticleList = () => {
 })}
 
 
-//alert( sessionStorage.getItem("activeUser") )
