@@ -1,7 +1,6 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { message } from "./chat/messages.js"
 
 
 /*
@@ -22,4 +21,3 @@ if(!activeUser){
     Nutshell()
 }
 
-message()

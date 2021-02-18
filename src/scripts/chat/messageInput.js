@@ -1,15 +1,13 @@
-import { useMessages, getMessages, deleteMessage } from './messageDataProvider.js'
+import { saveMessage, getMessages } from './messageDataProvider.js'
+import { messages } from './messageList.js'
 
-const composeMessage = document.querySelector("#messages")
-const messageList = document.querySelector("#message-list")
+export const messageForm = () => {
+    const composeMessage = document.querySelector("#messages")
+    composeMessage.innerHTML = `
+    <input type="date" id="date-text">
+    <input type="text" placeholder="Type Message Here..." id="note-text">
+    
+    <button id="postMessage">Post Message</button>
+    `
+}
 
-export const messages = () => {
-    getMessages()
-    .then(() => {
-        let messageHTML = ""
-        let allMessages = useMessages()
-        for(let thisMessage of allMessages){
-            messageHTML += message(thisMessage)
-        }
-        messageList.innerHTML = messageHTML
-    })}

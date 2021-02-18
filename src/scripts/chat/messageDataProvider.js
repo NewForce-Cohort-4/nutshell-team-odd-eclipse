@@ -11,6 +11,18 @@ export const getMessages = () => {
         messages = messagesFromAPI
     })}
 
+    //Save New Note
+    export const saveMessage = message => {
+        return fetch("http://localhost:8088/messages" , {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(message)
+        })
+        .then(getMessages)
+    }
+
     //Delete button for notes
     export const deleteMessage = messageId => {
     return fetch(`http://localhost:8088/messages/${messageId}`, {

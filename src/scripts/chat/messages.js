@@ -2,9 +2,8 @@
 export const message = (messageObject) =>{
     return `
     <section>
-    <h2>Message:</h2>
-    <p>${messageObject.message}</p>
-    <p>${messageObject.userId}</p>
+    <p>Message: ${messageObject.message}</p>
+    <p>User: ${messageObject.userId}</p>
     <button id="deleteNote--${messageObject.id}">Delete</button>
     </section>
     `
