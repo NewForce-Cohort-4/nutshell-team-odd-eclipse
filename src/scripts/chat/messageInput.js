@@ -11,3 +11,24 @@ export const messageForm = () => {
     `
 }
 
+const eventHub = document.querySelector("#messages")
+eventHub.addEventListener("click", (clickEvent) => {
+    if(clickEvent.target.id === "postMessage") {
+        console.log("you clicked me")
+
+        let message = document.querySelector("#note-text")
+        let dateOfMessage = document.querySelector("#date-text")
+        let user = sessionStorage.getItem("activeUser")
+
+        const newMessage = {
+            message: message.value,
+            userId: user,
+            dateOfMessage: dateOfMessage.value,
+        }
+        console.log(newMessage)
+        console.log(sessionStorage.getItem("activeUser"))
+        saveMessage(newMessage)
+        .then(getMessages)
+    }
+
+})
