@@ -15,3 +15,7 @@ export const Nutshell = () => {
     eventList()
       // Render all your UI components here
 }
+
+//Patti imported
+import {ArticleList} from "./Articles/ArticleList.js"
+ArticleList()
