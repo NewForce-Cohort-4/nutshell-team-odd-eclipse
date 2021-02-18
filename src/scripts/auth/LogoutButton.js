@@ -14,6 +14,10 @@ eventHub.addEventListener("click", (eventObject) => {
         sessionStorage.clear()
 
         // If you want to clear the DOM when you log out, select individual containers here and set their innerHTML property to an empty string
+        document.querySelector("#articles").innerHTML = ""
+        document.querySelector("#messages").innerHTML = ""
+        document.querySelector("#tasks").innerHTML = ""
+        document.querySelector("#events").innerHTML = ""
 
         // This will clear the logout button from the DOM-- you'd just have to do this individually for any other containers you add
         contentTarget.innerHTML = ""
