@@ -17,17 +17,16 @@ export const TaskList = () => {
       taskHTMLString += task(currentTask);
     }
 
-    taskContainer.innerHTML= `<section>
+    taskContainer.innerHTML = `<section>
     <article class="flex-container-col">
         <div class="event-header flex-container-row">
             <h2>Current Task</h2>
                 <div class="button-container">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="createArticle">Create Task</button>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="createTask">Create Task</button>
                 </div>
         </div>
         <div>${taskHTMLString}</div>
     </article>
-</section>`
-
+</section>`;
   });
 };
