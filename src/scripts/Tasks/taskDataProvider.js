@@ -24,8 +24,7 @@ export const saveTask = task => {
             "Content-type": "application/json"
         },
         body: JSON.stringify(task)
-    }).then(() => {
-        task()
+    
     })
 }
 

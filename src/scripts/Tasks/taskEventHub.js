@@ -23,7 +23,7 @@ eventHub.addEventListener("click", eventObject => {
         }
 
         saveTask(newTask)
-        .then(newTaskButton)
+        .then(TaskList)
 
     }
 
