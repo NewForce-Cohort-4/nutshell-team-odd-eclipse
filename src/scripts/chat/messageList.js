@@ -1,5 +1,6 @@
 import { useMessages, getMessages, deleteMessage } from './messageDataProvider.js'
 import { message } from './messages.js'
+import { useUsers } from '../Users/UserDataProvider.js'
 
 //Prints the list of messages 
 export const messages = () => {
@@ -8,8 +9,10 @@ export const messages = () => {
     .then(() => {
         let messageHTML = ""
         let allMessages = useMessages()
+        let allUsers = useUsers()
         for(let thisMessage of allMessages){
-            messageHTML += message(thisMessage)
+            const userHTML = allUsers.find(userObject => userObject.id === thisMessage.useerId)
+            messageHTML += message(thisMessage, userHTML)
         }
         messageList.innerHTML = messageHTML
     })}
