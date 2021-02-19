@@ -15,7 +15,7 @@ export const eventCard = (eventData, priorityClass) => {
             </div>
         </div>
         <div class="card-body">
-            <p>${Date.toDateString(eventData.eventDate)}</p>
+            <p>${Date(eventData.eventDate).toString()}</p>
             <p><strong>Location:</strong>${eventData.eventLocation}</p>
             <p>${eventData.eventDetails}</p>
         </div>
