@@ -22,13 +22,10 @@ export const messages = () => {
     const eventHub = document.querySelector("#message-list")
     eventHub.addEventListener("click", (eventObject) => {
         if(eventObject.target.id.startsWith("deleteNote--")) {
-            console.log("You Clicked me!")
             const messageToDelete = eventObject.target.id.split("--")[1]
-            console.log(messageToDelete)
             const currentMessage = useMessages().find((message) => {
                 return message.id === parseInt(messageToDelete)
             })
-            console.log(currentMessage)
             deleteMessage(currentMessage.id).then(getMessages)
             .then(messages)
         }})

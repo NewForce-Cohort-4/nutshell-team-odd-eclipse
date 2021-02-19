@@ -16,7 +16,6 @@ export const messageForm = () => {
 const eventHub = document.querySelector("#messages")
 eventHub.addEventListener("click", (clickEvent) => {
     if(clickEvent.target.id === "postMessage") {
-        console.log("you clicked me")
 
         let message = document.querySelector("#note-text")
         let dateOfMessage = document.querySelector("#date-text")
@@ -27,7 +26,6 @@ eventHub.addEventListener("click", (clickEvent) => {
             userId: user,
             dateOfMessage: dateOfMessage.value,
         }
-        console.log(newMessage)
         saveMessage(newMessage)
         .then(getMessages)
     }})
