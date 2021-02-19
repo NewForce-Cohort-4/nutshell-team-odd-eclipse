@@ -1,4 +1,5 @@
-import { saveMessage, getMessages } from './messageDataProvider.js'
+import { saveMessage } from './messageDataProvider.js'
+import { messages } from './messageList.js'
 
 //Form to fill out for new message
 export const messageForm = () => {
@@ -27,5 +28,5 @@ eventHub.addEventListener("click", (clickEvent) => {
             dateOfMessage: dateOfMessage.value,
         }
         saveMessage(newMessage)
-        .then(getMessages)
+        .then(messages)
     }})

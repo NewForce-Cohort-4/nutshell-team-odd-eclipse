@@ -25,9 +25,7 @@ export const getMessages = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(message)
-        })
-        .then(getMessages)
-    }
+        })}
 
     //Delete button for notes
     export const deleteMessage = messageId => {
