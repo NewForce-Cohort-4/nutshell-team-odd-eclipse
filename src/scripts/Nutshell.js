@@ -4,6 +4,7 @@ import { messages} from './chat/messageList.js'
 import { messageForm } from './chat/messageInput.js'
 //Patti imported
 import {ArticleList} from "./Articles/ArticleList.js"
+import { eventList } from './events/eventList.js'
 
 
 
@@ -14,6 +15,7 @@ export const Nutshell = () => {
     messages()
     messageForm()
     ArticleList()
+    eventList()
 
           // Render all your UI components here
 }
