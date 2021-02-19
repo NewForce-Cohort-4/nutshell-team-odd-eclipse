@@ -3,7 +3,15 @@
 
 let articles = []
 
-export const useArticles = () => articles.slice()
+//sort the articles by date
+export const useArticles = () => {
+    const sortedByDate = articles.sort(
+        (currentArticle, nextArticle) =>
+            Date.parse(currentArticle.timeStamp) - Date.parse(nextArticle.timeStamp)
+    )
+    return sortedByDate
+}
+//articles.slice()
 
 //pulling data for getArticles from the local json server, converting the data, passing it back into the array articles
 export const getArticles = () => {
@@ -27,7 +35,7 @@ export const saveArticles = (newArticle) => {
 
 //created a delete function, using a fetch call to get into the database and locate an article by a parameter using an article id(defined on another module)
 export const deleteArticles = (articleId) => {
-    return fetch(`http://localhost:8088/articles${articleId}`, {
-        method: "DELETE"
+    return fetch(`http://localhost:8088/articles/${articleId}`, {
+        method: "DELETE",
     })
 }
