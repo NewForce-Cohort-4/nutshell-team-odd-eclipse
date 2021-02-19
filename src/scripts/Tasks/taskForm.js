@@ -22,8 +22,8 @@ export const newTaskButton = () => {
             <label for="completion Date">Date to Complete</label>
             <input type="text" name="date-to-complete" id="date">
             
-            <!-- Save Article Button -->
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="saveArticle">Save</button>
+            <!-- Save Task Button -->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="saveTask">Save</button>
         </fieldset>
     </form>
 </div>

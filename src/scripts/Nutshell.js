@@ -10,7 +10,7 @@ import { eventList } from './events/eventList.js'
 // Link the events EventHub to activate event listeners
 import { } from './events/eventsEventHub.js'
 
-
+import {TaskList} from "./Tasks/taskList.js"
 
 export const Nutshell = () => {
 
@@ -21,5 +21,7 @@ export const Nutshell = () => {
     eventList()
 
     ArticleList()
+
+    TaskList()
     
 }

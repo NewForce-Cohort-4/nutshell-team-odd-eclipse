@@ -1,8 +1,9 @@
 // Author: Mandy Campbell
 
-// Purpose: run fetch call to gather data with get, post, save
+// Purpose: run fetch call to gather data with get, post, save, and delete
 
 let tasks = []
+
 export const useTasks = () => {
     // returns a copy of the tasks array
     return tasks.slice()
@@ -11,8 +12,8 @@ export const useTasks = () => {
 export const getTasks = () => {
     return fetch (`http://localhost:8088/tasks`)
     .then(response => response.json())
-    .then(parsedTasks =>{
-        tasks = parsesdTasks
+    .then(parsedTasks => {
+        tasks = parsedTasks
     })
 }
 
