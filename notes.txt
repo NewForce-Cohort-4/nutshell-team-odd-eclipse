@@ -20,3 +20,67 @@ THE PLAN
 - David - events: building the eventDataProvider, event.js, eventList, eventForm
 
 Meet up to discuss which stretch goals we'd like to implement
+
+--------------------------------------------------------------------
+BUTTONS
+--------------------------------------------------------------------
+ADD EVENT BUTTON
+<div class="button-container">
+	<button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
+</div>
+
+SAVE BUTTON
+<button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="save-event">Save</button>
+
+DELETE BUTTON
+<div class="button-container">
+	<button type="button" class="btn btn-danger btn-sm rounded-pill" id="delete-event--${eventData.id}">Delete</button>
+</div>
+
+X (close) button
+<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+--------------------------------------------------------------------
+CARD
+--------------------------------------------------------------------
+<div class="card">
+	<div class="card-header flex-container-row-even">
+		<h5>${object.name}</h5>
+		<div class="button-container">
+			<button type="button" class="btn btn-danger btn-sm rounded-pill" id="delete-event--${object.id}">Delete</button>
+		</div>
+	</div>
+	<div class="card-body">
+		<p>${object.date}</p>
+		<p>${object.location}</p>
+		<p>${object.details}</p>
+	</div>
+</div>
+
+--------------------------------------------------------------------
+FORM
+--------------------------------------------------------------------
+<div class="modal-header">
+	<h5 class="modal-title" id="staticBackdropLabel">Create New Event</h5>
+	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+	<form>
+		<fieldset class="flex-container-col">
+			<label for="event-date">Date of Event</label>
+			<input type="date" name="event-date" id="event-date">
+			
+			<label for="event-name">Name of Event</label>
+			<input type="text" name="event-name" id="event-name">
+			
+			<label for="event-location">Location</label>
+			<input type="text" name="event-location" id="event-location">
+
+			<label for="event-details">Details</label>
+			<textarea name="event-details" id="event-details" cols="30" rows="10"></textarea>
+
+			<!-- Record Entry Button -->
+			<button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="save-event">Save</button>
+		</fieldset>
+	</form>
+</div>
