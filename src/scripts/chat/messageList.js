@@ -11,8 +11,8 @@ export const messages = () => {
         let allMessages = useMessages()
         let allUsers = useUsers()
         for(let thisMessage of allMessages){
-            const userHTML = allUsers.find(userObject => userObject.id === thisMessage.useerId)
-            messageHTML += message(thisMessage, userHTML)
+            const userHTML = allUsers.find(userObject => userObject.id === +thisMessage.userId)
+           let messageHTML += message(thisMessage, userHTML)
         }
         messageList.innerHTML = messageHTML
     })}
