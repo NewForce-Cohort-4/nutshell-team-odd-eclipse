@@ -6,8 +6,10 @@ let articles = []
 //sort the articles by date
 export const useArticles = () => {
     const sortedByDate = articles.sort(
-        (currentArticle, nextArticle) =>
-            Date.parse(currentArticle.timeStamp) - Date.parse(nextArticle.timeStamp)
+        (currentArticle, nextArticle) => 
+           Date.parse(nextArticle.timeStamp) - Date.parse(currentArticle.timeStamp)
+    
+            
     )
     console.log(sortedByDate)
     return sortedByDate
