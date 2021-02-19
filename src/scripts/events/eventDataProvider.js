@@ -12,14 +12,18 @@ const eventsAPIurl = "http://localhost:8088/events"
 
 // Build a function to deliver a copy of the cached event data
 export const useEvents = () => {
-    return events.slice()
+    const sortedByDate = events.sort(
+        (currentEvent, nextEvent) =>
+            Date.parse(currentEvent.eventDate) - Date.parse(nextEvent.eventDate)
+    )
+    return sortedByDate
 }
 
 // Build a function to fetch events data from the local API 
 // and cache it in the locally scoped variable "events"
-export const getEvents = () => {
+export const getEvents = (userID) => {
     
-    return fetch(eventsAPIurl)
+    return fetch(eventsAPIurl + `?userId=${userID}`)
         .then(response => response.json())
         .then(
             parsedEvents => {
