@@ -5,8 +5,8 @@
       "email": "me@me.com"
     },
     {
-      "email": "dtbillups@comcast.net",
-      "id": 2
+      "id": 2,
+      "email": "you@you.com"
     }
   ],
   "messages": [
@@ -14,6 +14,26 @@
       "id": 1,
       "userId": 1,
       "message": "What's up?"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "message": "You there?"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "message": "DUDEEEE"
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "message": "Yoooooo"
+    },
+    {
+      "id": 5,
+      "userId": 2,
+      "message": "Snow day tomorrow!"
     }
   ],
   "articles": [
@@ -23,6 +43,20 @@
       "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
       "title": "Wormholes Allow Information to Escape Black Holes",
       "synopsis": "Check out this recent discovery about workholes"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "url": "https://getpocket.com/explore/item/why-an-old-theory-of-everything-is-gaining-new-life?utm_source=pocket-newtab",
+      "title": "Why an Old Theory of Everything Is Gaining New Life",
+      "synopsis": "For decades, physicists have struggled to create a quantum theory of gravity. Now an approach that dates to the 1970s is attracting newfound attention."
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "url": "https://www.nbcnews.com/news/us-news/how-billions-pandemic-aid-was-swindled-con-artists-crime-syndicates-n1257766?utm_source=pocket-newtab",
+      "title": "How billions in pandemic aid was swindled by con artists and crime syndicates",
+      "synopsis": "A senior federal law enforcement source said the fraud is so complex and multilayered that it will take months to develop a full accounting."
     }
   ],
   "tasks": [
@@ -30,6 +64,20 @@
       "id": 1,
       "userId": 1,
       "task": "Take out garbage",
+      "dueDate": "2/20/2021",
+      "complete": false
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "task": "Buy groceries",
+      "dueDate": "2/20/2021",
+      "complete": false
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "task": "Take a nap",
       "dueDate": "2/20/2021",
       "complete": false
     }
@@ -40,7 +88,24 @@
       "userId": 1,
       "eventName": "Party Time",
       "eventDate": "7/9/2021",
-      "eventLocation": "NewForce Zoom Room"
+      "eventLocation": "NewForce Zoom Room",
+      "eventDetails": "Celebrating our successful completion of NewForce! Congratulations, everyone!"
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "eventName": "St. Patty's Day",
+      "eventDate": "3/17/2021",
+      "eventLocation": "Somewhere",
+      "eventDetails": "Kiss me, I'm Irish!"
+    },
+    {
+      "userId": 2,
+      "eventName": "Spring Break",
+      "eventDate": "2021-04-05",
+      "eventLocation": "Who knows???",
+      "eventDetails": "A week off from code!",
+      "id": 4
     }
   ],
   "friends": [
