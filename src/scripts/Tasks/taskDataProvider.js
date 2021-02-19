@@ -22,7 +22,29 @@ export const saveTask = task => {
         headers: {
             "Content-type": "application/json"
         },
-        
+        body: JSON.stringify(task)
+    }).then(() => {
+        listTask()
     })
 }
 
+export const updateStatus = (taskId,completed) => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`,{
+        method: "PATCH",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(
+            {
+                // changing the status 
+              "completed": completed        
+            }
+        )
+    });
+}
+
+export const deleteTask = taskId => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        method: "DELETE"
+    })
+}

@@ -10,6 +10,7 @@ import { eventList } from './events/eventList.js'
 // Link the events EventHub to activate event listeners
 import { } from './events/eventsEventHub.js'
 
+
 export const Nutshell = () => {
 
     LogOutButton()
@@ -19,4 +20,5 @@ export const Nutshell = () => {
     eventList()
 
     ArticleList()
+    
 }
