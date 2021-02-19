@@ -17,29 +17,53 @@ export const eventList = () => {
 
     const borderClass = ["border-primary border-4", "border-secondary"]
     const textClass = ["text-primary", "text-secondary"]
+    // Generate HTML using a string-template-literal function to generate an HTML card for each event
+    eventTarget.innerHTML = `
+        <section>
+            <article class="flex-container-col">
+                <div class="event-header flex-container-row-even">
+                    <h4>Upcoming Events</h4>
+                    <div class="button-container">
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
+                    </div>
+                </div>
+                <div class="scrollable-container-aside">
+                    <div class="flex-container-col" id="event-list">
+                        
+                    </div>
+                </div>
+            </article>
+        </section>
+        `;
+    
+        render()
+}
+
+export const render = () => {
+    const eventListTarget = document.querySelector("#event-list")
+    
+    const userID = sessionStorage.getItem("activeUser")
+
+    const borderClass = ["border-primary border-4", "border-secondary"]
+    const textClass = ["text-primary", "text-secondary"]
+
+    let eventsHTML = ""
+
     // Fetch events, cache events locally
     getEvents(userID).then(() => {
         let events = useEvents();
-        // let dateString = Date(events[0].eventDate).toDateString()
         
-        // Generate HTML using a string-template-literal function to generate an HTML card for each event
-        eventTarget.innerHTML = `
-            <section>
-                <article class="flex-container-col">
-                    <div class="event-header flex-container-row-even">
-                        <h4>Upcoming Events</h4>
-                        <div class="button-container">
-                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
-                        </div>
-                    </div>
-                    <div class="scrollable-container-aside">
-                        <div class="flex-container-col" id="event-list">
-                            ${eventCard(events[0], borderClass[0], textClass[0])}
-                            ${events.slice(1,events.length).map(event => eventCard(event, borderClass[1], textClass[1])).join("")}
-                        </div>
-                    </div>
-                </article>
-            </section>
-            `;
+        if (events.length === 0) {
+            eventsHTML += `
+            <div class="">
+                <h6>No Upcoming Events</h6>
+            </div>
+            `
+        } else {
+            eventsHTML += eventCard(events[0], borderClass[0], textClass[0]) + events.slice(1,events.length).map(event => eventCard(event, borderClass[1], textClass[1])).join("")
+            
+        }
+
+        eventListTarget.innerHTML = eventsHTML
     })
 }
