@@ -20,7 +20,7 @@ export const newTaskButton = () => {
             <input type="text" name="task" id="task">
             
             <label for="completion Date">Date to Complete</label>
-            <input type="text" name="date-to-complete" id="date">
+            <input type="date" name="date-to-complete" id="date">
             
             <!-- Save Task Button -->
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="saveTask">Save</button>

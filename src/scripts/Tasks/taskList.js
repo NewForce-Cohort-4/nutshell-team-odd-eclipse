@@ -22,7 +22,7 @@ export const TaskList = () => {
         <div class="event-header flex-container-row">
             <h2>Current Task</h2>
                 <div class="button-container">
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="createTask">Create Task</button>
+                <button type="button" class="btn btn-primary btn-sm" id="createTask">Create Task</button>
                 </div>
         </div>
         <div>${taskHTMLString}</div>

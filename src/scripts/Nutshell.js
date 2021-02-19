@@ -14,6 +14,8 @@ import { eventList } from './events/eventList.js'
 import { } from './events/eventsEventHub.js'
 
 import {TaskList} from "./Tasks/taskList.js"
+import {} from "./Tasks/taskDataProvider.js"
+import {} from "./Tasks/taskEventHub.js"
 
 export const Nutshell = () => {
 
