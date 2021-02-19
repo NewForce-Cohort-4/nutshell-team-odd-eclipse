@@ -29,7 +29,7 @@ eventHub.addEventListener("click", eventObject => {
 
     else if (eventObject.target.id.includes("deleteTask")){
         let taskId = eventObject.target.id.split("--")[1]
-        console.log(eventObject.target.id, taskId)
+        // console.log(eventObject.target.id, taskId)
         deleteTask(taskId)
         .then(TaskList)
     }

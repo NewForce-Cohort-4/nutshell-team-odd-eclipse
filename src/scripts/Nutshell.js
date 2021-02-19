@@ -21,7 +21,6 @@ export const Nutshell = () => {
     ArticleList()
     eventList()
     TaskList()
-    
 
           // Render all your UI components here
 }

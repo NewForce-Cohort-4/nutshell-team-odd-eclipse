@@ -32,7 +32,7 @@ export const ArticleList = () => {
        articleContainer.innerHTML = `
         <section>
             <article class="flex-container-col">
-                <div class="event-header flex-container-row">
+                <div class="event-header flex-container-row-even">
                     <h2>Current News</h2>
                         <div class="button-container">
                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="createArticle">Create Article</button>

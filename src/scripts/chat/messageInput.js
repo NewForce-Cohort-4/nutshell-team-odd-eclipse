@@ -5,7 +5,7 @@ import { messages } from './messageList.js'
 export const messageForm = () => {
     const composeMessage = document.querySelector("#messages")
     composeMessage.innerHTML = `
-    <h2>New Message</h2>
+    <h5>New Message</h5>
     <input type="date" id="date-text">
     <input type="text" placeholder="Type Here..." id="note-text">
     

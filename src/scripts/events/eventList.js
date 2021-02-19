@@ -22,12 +22,12 @@ export const eventList = () => {
         <section>
             <article class="flex-container-col">
                 <div class="event-header flex-container-row-even">
-                    <h4>Upcoming Events</h4>
+                    <h5>Upcoming Events</h5>
                     <div class="button-container">
                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
                     </div>
                 </div>
-                <div class="scrollable-container-aside">
+                <div class="scrollable-container-events">
                     <div class="flex-container-col" id="event-list">
                         
                     </div>
@@ -52,7 +52,7 @@ export const render = () => {
     // Fetch events, cache events locally
     getEvents(userID).then(() => {
         let events = useEvents();
-        
+        console.log(events)
         if (events.length === 0) {
             eventsHTML += `
             <div class="">
@@ -60,7 +60,23 @@ export const render = () => {
             </div>
             `
         } else {
-            eventsHTML += eventCard(events[0], borderClass[0], textClass[0]) + events.slice(1,events.length).map(event => eventCard(event, borderClass[1], textClass[1])).join("")
+            // let month = Date(events[0].eventDate).split(" ",2)[1]
+            let month = "NEW MONTH"
+            eventsHTML += `
+            <h7>${month}</h7>
+            ${eventCard(events[0], borderClass[0], textClass[0])}
+            `
+
+            for (let i=1; i<events.length; i++) {
+                console.log(Date(events[i].eventDate).split(" ",2)[1])
+                // if (Date(events[i].eventDate).split(" ",2)[1] !== Date(events[i-1].eventDate).split(" ",2)[1]) {
+                //     // month = Date(events[i].eventDate).split(" ",2)[1]
+                //     eventsHTML += `<h7>${month}</h7>`
+                // }
+                
+                eventsHTML += eventCard(events[i], borderClass[1], textClass[1])
+            }
+            
             
         }
 
