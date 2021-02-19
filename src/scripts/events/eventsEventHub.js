@@ -25,7 +25,7 @@ eventHub.addEventListener("click", eventObject => {
     if (eventObject.target.id === "save-event") {
         // create a new event object
         const newEvent = {
-            userId: 1,
+            userId: sessionStorage.getItem("activeUser"),
             eventName: document.getElementById("event-name").value,
             eventDate: document.getElementById("event-date").value,
             eventLocation: document.getElementById("event-location").value,

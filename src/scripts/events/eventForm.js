@@ -33,7 +33,7 @@ export const eventForm = () => {
             <textarea name="event-details" id="event-details" cols="30" rows="10"></textarea>
 
             <!-- Record Entry Button -->
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="save-event">Save</button>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="save-event">Save</button>
         </fieldset>
         </form>
         </div>
