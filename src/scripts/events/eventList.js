@@ -15,11 +15,13 @@ export const eventList = () => {
     // Define HTML target location for list of events
     const eventTarget = document.querySelector("#events")
 
-    const priorityClass = "text-white bg-secondary"
+    const borderClass = ["border-primary border-4", "border-secondary"]
+    const textClass = ["text-primary", "text-secondary"]
     // Fetch events, cache events locally
     getEvents(userID).then(() => {
         let events = useEvents();
-
+        // let dateString = Date(events[0].eventDate).toDateString()
+        
         // Generate HTML using a string-template-literal function to generate an HTML card for each event
         eventTarget.innerHTML = `
             <section>
@@ -32,8 +34,8 @@ export const eventList = () => {
                     </div>
                     <div class="scrollable-container-aside">
                         <div class="flex-container-col" id="event-list">
-                            ${eventCard(events[0], priorityClass)}
-                            ${events.slice(1,events.length).map(event => eventCard(event, "")).join("")}
+                            ${eventCard(events[0], borderClass[0], textClass[0])}
+                            ${events.slice(1,events.length).map(event => eventCard(event, borderClass[1], textClass[1])).join("")}
                         </div>
                     </div>
                 </article>
