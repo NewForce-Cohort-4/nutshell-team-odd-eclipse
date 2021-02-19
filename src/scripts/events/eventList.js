@@ -15,28 +15,31 @@ export const eventList = () => {
     // Define HTML target location for list of events
     const eventTarget = document.querySelector("#events")
 
-    const borderClass = ["border-primary border-4", "border-secondary"]
-    const textClass = ["text-primary", "text-secondary"]
-    // Generate HTML using a string-template-literal function to generate an HTML card for each event
-    eventTarget.innerHTML = `
-        <section>
-            <article class="flex-container-col">
-                <div class="event-header flex-container-row-even">
-                    <h5>Upcoming Events</h5>
-                    <div class="button-container">
-                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
+    // Fetch events, cache events locally
+    getEvents(userID).then(() => {
+        let events = useEvents();
+        console.log(Date(0))
+        // Generate HTML using a string-template-literal function to generate an HTML card for each event
+        eventTarget.innerHTML = `
+            <section>
+                <article class="flex-container-col">
+                    <div class="event-header flex-container-row-even">
+                        <h5>Upcoming Events</h5>
+                        <div class="button-container">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
+                        </div>
                     </div>
-                </div>
-                <div class="scrollable-container-events">
-                    <div class="flex-container-col" id="event-list">
+                    <div class="scrollable-container-events">
+                        <div class="flex-container-col" id="event-list">
                         
+                        </div>
                     </div>
-                </div>
-            </article>
-        </section>
-        `;
-    
+                </article>
+            </section>
+            `;
+        
         render()
+    })
 }
 
 export const render = () => {
@@ -52,7 +55,7 @@ export const render = () => {
     // Fetch events, cache events locally
     getEvents(userID).then(() => {
         let events = useEvents();
-        console.log(events)
+
         if (events.length === 0) {
             eventsHTML += `
             <div class="">
@@ -60,26 +63,62 @@ export const render = () => {
             </div>
             `
         } else {
-            // let month = Date(events[0].eventDate).split(" ",2)[1]
-            let month = "NEW MONTH"
+            let month = Date(events[0].eventDate).split(" ",2)[1]
+            // let month = "NEW MONTH"
             eventsHTML += `
             <h7>${month}</h7>
             ${eventCard(events[0], borderClass[0], textClass[0])}
             `
 
             for (let i=1; i<events.length; i++) {
-                console.log(Date(events[i].eventDate).split(" ",2)[1])
-                // if (Date(events[i].eventDate).split(" ",2)[1] !== Date(events[i-1].eventDate).split(" ",2)[1]) {
-                //     // month = Date(events[i].eventDate).split(" ",2)[1]
-                //     eventsHTML += `<h7>${month}</h7>`
-                // }
+                // console.log(Date(events[i].eventDate).split(" ",2)[1])
+                if (Date(events[i].eventDate).split(" ",2)[1] !== month) {
+                    month = Date(events[i].eventDate).split(" ",2)[1]
+                    eventsHTML += `<h7>${month}</h7>`
+                }
                 
                 eventsHTML += eventCard(events[i], borderClass[1], textClass[1])
-            }
-            
-            
+            }            
         }
 
         eventListTarget.innerHTML = eventsHTML
     })
 }
+
+
+// Old function
+/*
+export const eventList = () => {
+    const userID = sessionStorage.getItem("activeUser")
+    // Define HTML target location for list of events
+    const eventTarget = document.querySelector("#events")
+
+    const borderClass = ["border-primary border-4", "border-secondary"]
+    const textClass = ["text-primary", "text-secondary"]
+    
+    // Fetch events, cache events locally
+    getEvents(userID).then(() => {
+        let events = useEvents();
+        console.log(Date(0))
+        // Generate HTML using a string-template-literal function to generate an HTML card for each event
+        eventTarget.innerHTML = `
+            <section>
+                <article class="flex-container-col">
+                    <div class="event-header flex-container-row-even">
+                        <h5>Upcoming Events</h5>
+                        <div class="button-container">
+                            <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
+                        </div>
+                    </div>
+                    <div class="scrollable-container-events">
+                        <div class="flex-container-col" id="event-list">
+                        ${eventCard(events[0], borderClass[0], textClass[0])}
+                        ${events.slice(1,events.length).map(event => eventCard(event, borderClass[1], textClass[1])).join("")}
+                        </div>
+                    </div>
+                </article>
+            </section>
+            `;
+    })
+}
+*/
