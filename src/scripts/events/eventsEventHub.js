@@ -27,7 +27,7 @@ eventHub.addEventListener("click", eventObject => {
         const newEvent = {
             userId: sessionStorage.getItem("activeUser"),
             eventName: document.getElementById("event-name").value,
-            eventDate: document.getElementById("event-date").value,
+            eventDate: Date.parse(document.getElementById("event-date").value),
             eventLocation: document.getElementById("event-location").value,
             eventDetails: document.getElementById("event-details").value
         }

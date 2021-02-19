@@ -14,9 +14,14 @@ const eventsAPIurl = "http://localhost:8088/events"
 export const useEvents = () => {
     const sortedByDate = events.sort(
         (currentEvent, nextEvent) =>
-            Date.parse(currentEvent.eventDate) - Date.parse(nextEvent.eventDate)
+            currentEvent.eventDate - nextEvent.eventDate
     )
-    return sortedByDate
+
+    const upcomingEvents = sortedByDate.filter(event => {
+        return event.eventDate >= Date.now()
+    })
+
+    return upcomingEvents
 }
 
 // Build a function to fetch events data from the local API 
