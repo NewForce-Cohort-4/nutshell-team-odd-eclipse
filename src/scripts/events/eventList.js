@@ -18,6 +18,7 @@ export const eventList = () => {
     // Fetch events, cache events locally
     getEvents().then(() => {
         let events = useEvents();
+        console.log(new Date())
     
         // Generate HTML using a string-template-literal function to generate an HTML card for each event
         eventTarget.innerHTML = `
