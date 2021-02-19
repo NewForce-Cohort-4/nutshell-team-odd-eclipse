@@ -1,7 +1,10 @@
 import {LogOutButton} from "./auth/LogoutButton.js"
-
-//Patti imported
+//Imported by PP
+//Imported to print a list of articles after a user logs in
 import {ArticleList} from "./Articles/ArticleList.js"
+//Link the articles eventListeners
+import {} from "./Articles/ArticleEventHub.js"
+import {} from "./Articles/ArticleDataProvider.js"
 
 // Imported by DTB to generate a list of events once 
 // a user is logged in.
@@ -13,11 +16,14 @@ import { } from './events/eventsEventHub.js'
 export const Nutshell = () => {
 
     LogOutButton()
-    // Render all your UI components here
-
+    //Print the list of events to the DOM
+    ArticleList()
     // Print the list of events to the DOM
     eventList()
-
-    ArticleList()
-    // console.log(Date.parse("2021-09-06"))
+      // Render all your UI components here
 }
+
+
+    
+
+  
