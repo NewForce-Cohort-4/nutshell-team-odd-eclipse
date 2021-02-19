@@ -18,7 +18,7 @@ export const ArticleList = () => {
 
        // list of articles that is being identified by the userId
         const filteredArticles = allArticles.filter((singleArticle) => { 
-           return singleArticle.userId === +(sessionStorage.getItem("activeUser"))
+           return singleArticle.userId === (sessionStorage.getItem("activeUser"))
        })
        //console.log(filteredArticles)
        

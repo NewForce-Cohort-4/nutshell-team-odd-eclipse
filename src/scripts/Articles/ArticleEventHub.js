@@ -26,7 +26,7 @@ eventHub.addEventListener("click", eventObject => {
             timeStamp: new Date()
         }
         //use the saveEvent function to POST newArticle to local server
-        //use .then to call ArticleList and reprint a refreshed list of all articles
+        //use .then and call ArticleList and reprint a refreshed list of all articles
         saveArticles(newArticle)
         .then(ArticleList)
     }

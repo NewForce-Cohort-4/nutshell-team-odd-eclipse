@@ -9,9 +9,11 @@ export const useArticles = () => {
         (currentArticle, nextArticle) =>
             Date.parse(currentArticle.timeStamp) - Date.parse(nextArticle.timeStamp)
     )
+    console.log(sortedByDate)
     return sortedByDate
 }
 //articles.slice()
+
 
 //pulling data for getArticles from the local json server, converting the data, passing it back into the array articles
 export const getArticles = () => {
