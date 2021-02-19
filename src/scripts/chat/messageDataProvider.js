@@ -1,6 +1,12 @@
 let messages = ""
 
-export const useMessages = () => messages.slice()
+export const useMessages = () => {
+    const sortByDate = messages.sort(
+        (currentMessage, nextMessage) =>
+        Date.parse(currentMessage.dateOfMessage) - Date.parse(nextMessage.dateOfMessage)
+    )
+    return sortByDate
+}
 
 //Where chat messages is being pulled from 
 export const getMessages = () => {
