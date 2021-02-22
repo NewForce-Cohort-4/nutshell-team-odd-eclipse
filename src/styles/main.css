@@ -53,3 +53,9 @@
     border-radius: 10px;
     margin-bottom: 10px;
 }
+
+#message-list{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    margin: 1vh;
+}
