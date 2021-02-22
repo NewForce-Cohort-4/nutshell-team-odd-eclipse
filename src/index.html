@@ -35,12 +35,11 @@
 
                     <div class="row" id="tasks">
                         This is where the tasks will go.
-                        <ul class = "tasks-container list-group">
-                            <li class="list-group-item">A task</li>
-                            <li class="list-group-item">Second Task</li>
-                            <li class="list-group-item">Third Task</li>
-                        </ul>
-                        <section id="output-container"></section>
+                         <!-- Task Widget Container -->
+            <div>
+                <article class="tasklistContainer"></article>
+                <article class="taskFormContainer"></article>
+            </div>
                     <div class="row border-top border-2" id="tasks">
 
                     </div>
@@ -76,12 +75,3 @@
 
 
 
-<div class="task-card card p-2" ><h3>Task: ${task.task}</h3><br>
-    <h5>Complete by: ${task.expCompDate}</h5>
-    <div class="form-check">
-        <input class="form-check-input" ${task.completed == true ? "checked" : 'notcdafc'} type="checkbox" value="" id="check-complete--${task.id}">
-        <label class="form-check-label" for="flexCheckDefault">
-            <h5>Check Completed</h5>
-        </label>
-    </div>
-</div>

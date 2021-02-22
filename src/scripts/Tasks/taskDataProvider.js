@@ -1,47 +1,36 @@
-// Author: Mandy Campbell
+let tasks = []
 
-// Purpose: run fetch call to gather data with get, post, save, and delete
+export const useTask = () => tasks.slice()
 
-let tasks = [];
 
-export const useTasks = () => {
-  // returns a copy of the tasks array
-  return tasks.slice();
-};
 
-export const getTasks = () => {
-  return fetch(`http://localhost:8088/tasks`)
-    .then((response) => response.json())
-    .then((parsedTasks) => {
-      tasks = parsedTasks;
-    });
-};
+export const getTask = () => {
+    return fetch('http://localhost:8088/tasks') //fetch call to json server
+        .then(response => response.json()) // turn into javascript
+        .then(parsedTask => {
+            tasks = parsedTask // store variable in notes
+        })
 
-export const saveTask = (task) => {
-  return fetch("http://localhost:8088/tasks", {
-    method: "POST",
-    headers: {
-      "Content-type": "application/json",
-    },
-    body: JSON.stringify(task),
-  });
-};
+}
 
-export const updateStatus = (taskId, completed) => {
-  return fetch(`http://localhost:8088/tasks/${taskId}`, {
-    method: "PATCH",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      // changing the status
-      completed: completed,
-    }),
-  });
-};
-// console.log(taskId)
-export const deleteTask = (taskId) => {
-  return fetch(`http://localhost:8088/tasks/${taskId}`, {
-    method: "DELETE",
-  });
-};
+export const saveTask = task => { //
+    return fetch('http://localhost:8088/tasks', {
+        method: "POST", // makes a post request - POST means add something 
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(task) // the thing its going to send is a jsonified note we just built
+    })
+}
+
+export const moveNote = taskId => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        method: "PATCH",
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify({
+            completed: true,
+        }),
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+}

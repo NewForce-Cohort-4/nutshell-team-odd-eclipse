@@ -1,43 +1,40 @@
-import { task } from "./task.js"
-import { getTasks, useTasks } from './taskDataProvider.js'
-import { newTaskButton } from "./taskForm.js"
+import { getTask, useTask, moveNote } from './TaskDataProvider.js';
+import { Task } from './task.js';
 
-export const taskList = (currentState) => {
-  let activeUser = sessionStorage.getItem('activeUser')
-  getTasks()
-  .then(() => {
-    const tasks = useTasks()
-    let done = 0
+const taskContainer = document.querySelector(".tasklistContainer");
 
-    for(let i= 0; i<tasks.length; i++){
-      if(tasks[i].completed === true) {
-        done++;
-      }
-    }
-  })
+const eventHub = document.querySelector(".tasklistContainer")
+
+export const TaskList = () => { // in charge of getting the tasks and printing them
+    getTask() //gets task lists from database
+    .then(() => {
+        let allTasks = useTask();
+        let taskListHTMLString = "";
+        
+        //filter for completed tasks
+        
+            allTasks = allTasks.filter((currentTask) => {
+                return !currentTask.completed 
+            })
+
+        for (let currentTaskInLoop of allTasks){
+            taskListHTMLString += Task(currentTaskInLoop)
+            // console.log(Task)
+        };
+        taskContainer.innerHTML = `<h2>Task List</h2>${taskListHTMLString}`
+        
+    }) 
 }
-    const filteredTasks = allTasks.filter((singleTask) => {
-      return singleTask.userId === sessionStorage.getItem("activeUser");
-    });
-    // console.log(filteredTasks);
 
-    for (let currentTask of filteredTasks) {
-      taskHTMLString += task(currentTask);
-    }
+eventHub.addEventListener("change", (eventObject)=> {
+        console.log("you clicked me")
+        console.log(eventObject.target.id)
+    if (eventObject.target.id.startsWith("completeNote")){
+    const idToMove = eventObject.target.id.split("--")[1]
+    //Call the moveNote function and pass in the appropriate id
+    // Then call TaskList to refresh the list of tasks 
+    moveNote(idToMove)
+    .then(TaskList) // then shows all left over tasks
 
-    taskContainer.innerHTML = `
-      <section>
-        <article class="flex-container-col">
-          <div class="event-header flex-container-row-even">
-            <h5>Current Task</h5>
-            <div class="button-container">
-              <button type="button" class="btn btn-primary btn-sm" id="createTask">Create Task</button>
-            </div>
-          </div>
-          <div>
-            ${taskHTMLString}
-          </div>
-        </article>
-      </section>
-      `;
- 
+}
+})
