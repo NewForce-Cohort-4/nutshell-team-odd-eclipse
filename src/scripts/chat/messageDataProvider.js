@@ -1,6 +1,7 @@
 let messages = ""
 
 export const useMessages = () => {
+    // console.log(messages)
     const sortByDate = messages.sort(
         (currentMessage, nextMessage) =>
         Date.parse(currentMessage.dateOfMessage) - Date.parse(nextMessage.dateOfMessage)

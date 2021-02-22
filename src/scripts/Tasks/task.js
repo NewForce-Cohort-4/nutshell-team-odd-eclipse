@@ -2,7 +2,7 @@
 // Purpose: this module creates an HTML representation of the task list
 
 export function task (taskObject) {
-    return`
+    return `
         <div class="card">
         <div class="card-header flex-container-row-even">
         <h3>${taskObject.task}</h3>
