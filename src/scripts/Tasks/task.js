@@ -6,18 +6,22 @@ export function task (taskObject) {
         <div class="card">
         <div class="card-header flex-container-row-even">
         <h3>${taskObject.task}</h3>
-        <div class="button-container">
-        <button type="button" class="btn btn-danger btn-sm rounded-pill" id="deleteTask--${taskObject.id}">Delete</button>
-    </div>
+        <input class="form-check-input" type="checkbox" value="" id="check-complete--${taskObject.id}">
+        <label class="form-check-label" for="flexCheckDefault">
+            Mark Completed
+        </label>
     
     </div>
     <div class="card-body">
-        <p>${taskObject.dueDate}</p>
+        <p>${taskObject.date}</p>
         
     </div>
 </div>
 `
 }
 
+
 // need something about completing the task
 // <p>${taskObject.}</p>
+
+// ${task.completed == true ? "checked" : 'notcdafc'}

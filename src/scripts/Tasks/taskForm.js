@@ -1,5 +1,7 @@
 // Author:  Mandy Campbell
 // Purpose: build the task form with buttons and eventlisteners
+import { saveTask, updateStatus } from "./taskDataProvider.js"
+
 
 export const newTaskButton = () => {
 
@@ -23,10 +25,12 @@ export const newTaskButton = () => {
             <input type="date" name="date-to-complete" id="date">
             
             <!-- Save Task Button -->
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="saveTask">Save</button>
+            <button type="button"  "class="btn btn-secondary" data-bs-dismiss="modal" id="saveTask">Save</button>
+            <div class=tasks-container></div>
         </fieldset>
     </form>
 </div>
+<ul class="tasks-container list-group"></ul>
 `
 }
     

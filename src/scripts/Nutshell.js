@@ -9,7 +9,7 @@ import { eventList } from './events/eventList.js'
 
 
 
-import {TaskList} from "./Tasks/taskList.js"
+import {taskList} from "./Tasks/taskList.js"
 import {} from "./Tasks/taskDataProvider.js"
 import {} from "./Tasks/taskEventHub.js"
 
@@ -20,7 +20,7 @@ export const Nutshell = () => {
     messageForm()
     ArticleList()
     eventList()
-    TaskList()
+    taskList()
     
 
           // Render all your UI components here

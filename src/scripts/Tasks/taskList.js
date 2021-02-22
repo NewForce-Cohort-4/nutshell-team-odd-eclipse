@@ -1,32 +1,18 @@
-import { useTasks, getTasks } from "./taskDataProvider.js";
-import { task } from "./task.js";
+import { task } from "./task.js"
+import { getTasks, useTasks } from './taskDataProvider.js'
+import { newTaskButton } from "./taskForm.js"
 
-export const TaskList = () => {
-  getTasks().then(() => {
-    const allTasks = useTasks();
-    // console.log(allTasks);
-    const taskContainer = document.querySelector("#tasks");
-    let taskHTMLString = "";
+export const taskList = (currentState) => {
+  let activeUser = sessionStorage.getItem('activeUser')
+  getTasks()
+  .then(() => {
+    const tasks = useTasks()
+    let done = 0
 
-    const filteredTasks = allTasks.filter((singleTask) => {
-      return singleTask.userId === sessionStorage.getItem("activeUser");
-    });
-    console.log(filteredTasks);
-
-    for (let currentTask of filteredTasks) {
-      taskHTMLString += task(currentTask);
+    for(let i= 0; i<tasks.length; i++){
+      if(tasks[i].completed === true) {
+        done++;
+      }
     }
-
-    taskContainer.innerHTML = `<section>
-    <article class="flex-container-col">
-        <div class="event-header flex-container-row">
-            <h2>Current Task</h2>
-                <div class="button-container">
-                <button type="button" class="btn btn-primary btn-sm" id="createTask">Create Task</button>
-                </div>
-        </div>
-        <div>${taskHTMLString}</div>
-    </article>
-</section>`;
-  });
-};
+  })
+}
