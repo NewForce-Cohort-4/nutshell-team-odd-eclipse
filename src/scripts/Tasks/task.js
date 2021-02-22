@@ -1,22 +1,17 @@
-// Author:  Mandy Campbell
-// Purpose: this module creates an HTML representation of the task list
-
-export function task (taskObject) {
+export const Task = (taskNote) => {
     return `
-        <div class="card">
-            <div class="card-header flex-container-row-even">
-                <h6>${taskObject.task}</h6>
-                <div class="button-container">
-                    <button type="button" class="btn btn-danger btn-sm rounded-pill" id="deleteTask--${taskObject.id}">Delete</button>
-                </div>
-            </div>
-            <div class="card-body">
-                <p>${taskObject.dueDate}</p>
-                
+    <section class = "task-container flex-container"
+        <div class = "task-card">
+            <p>Task: ${taskNote.task}</p>
+            <p>Date: ${taskNote.date}</p>
+            <div class = "checkbox"
+            <h5>Check Completed</h5>
+            <p><input type="checkbox" id="completeNote--${taskNote.id}"></p>
+            
             </div>
         </div>
-`
+    </section>
+    `
+    
 }
 
-// need something about completing the task
-// <p>${taskObject.}</p>

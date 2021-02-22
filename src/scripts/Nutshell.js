@@ -11,8 +11,8 @@ import { eventList } from './events/eventList.js'
 import { } from './events/eventsEventHub.js'
 
 import {TaskList} from "./Tasks/taskList.js"
-import {} from "./Tasks/taskDataProvider.js"
-import {} from "./Tasks/taskEventHub.js"
+import { TaskForm } from "./tasks/TaskForm.js"
+import { newTaskButton } from "./tasks/TaskForm.js"
 
 export const Nutshell = () => {
 
@@ -21,7 +21,10 @@ export const Nutshell = () => {
     messageForm()
     ArticleList()
     eventList()
+    TaskForm()
     TaskList()
+    newTaskButton()
+    
 
 }
 

@@ -1,35 +1,53 @@
-// Author:  Mandy Campbell
-// Purpose: build the task form with buttons and eventlisteners
+import { saveTask } from './TaskDataProvider.js';
+import { TaskList } from './TaskList.js';
+
+const contentTarget = document.querySelector(".taskFormContainer")
+const eventHub = document.querySelector(".taskFormContainer")
+
+const render = () => {
+    contentTarget.innerHTML = `
+    <div class = "newTask">
+    <button id="newTaskButton">Enter a new task</button>
+    </div>`
+}
 
 export const newTaskButton = () => {
+    render()
 
-    // html container for form
-    let contentTarget = document.querySelector('#tasks')
-
-    contentTarget.innerHTML = ` 
-    <section class="task-form-container> 
-        <div class="task-form-header">
-            <h5 class="modal-title" id="staticBackdropLabel">Create New Task</h5>
-            <button type="button" class="btn-close" aria-label="Close"></button>
-
-        </div>
-
-        <div class="task-form">
-            <form>
-                <fieldset class="flex-container-col">
-                    
-                    <label for="title">New Task</label>
-                    <input type="text" name="task" id="task">
-                    
-                    <label for="completion Date">Date to Complete</label>
-                    <input type="date" name="date-to-complete" id="date">
-                    
-                    <!-- Save Task Button -->
-                    <button type="button" class="btn btn-secondary" id="saveTask">Save</button>
-                </fieldset>
-            </form>
-        </div>
-    </section>
-`
 }
-    
+
+document.querySelector("body").addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "newTaskButton") {
+        TaskForm()
+    }
+})
+
+// the following builds the form - needs an input or property of the note
+export const TaskForm = () => {
+    contentTarget.innerHTML = `
+    <fieldset>
+    <input type="date" id = "date"></input>
+    <input type="text" placeholder="Enter task here" id="task"> </input>
+    <button id="saveTask">Save Task</button>
+    </fieldset>
+    `
+}
+
+//all of the following is for when the save button is clicked
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "saveTask") {
+        console.log("you clicked me")
+
+        const newTask = {
+            //gets the value or inputs and stores in an object
+            date: document.querySelector("#date").value,
+            task: document.querySelector("#task").value,
+            completed: false,
+            userId: sessionStorage.getItem("activeUser")
+        }
+        
+        saveTask(newTask) //saves the task
+        .then(TaskList)
+        newTaskButton() // Refreshes your list once you've saved your new one
+    }
+})
