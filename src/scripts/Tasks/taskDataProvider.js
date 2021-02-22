@@ -5,7 +5,8 @@ export const useTask = () => tasks.slice()
 
 
 export const getTask = () => {
-    return fetch('http://localhost:8088/tasks') //fetch call to json server
+    const userID = sessionStorage.getItem("activeUser")
+    return fetch(`http://localhost:8088/tasks?userId=${userID}`) //fetch call to json server
         .then(response => response.json()) // turn into javascript
         .then(parsedTask => {
             tasks = parsedTask // store variable in notes
