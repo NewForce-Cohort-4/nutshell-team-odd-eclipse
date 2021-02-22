@@ -85,27 +85,75 @@
   "events": [
     {
       "id": 1,
-      "userId": 1,
+      "userId": "1",
       "eventName": "Party Time",
-      "eventDate": "7/9/2021",
+      "eventDate": "1625803200000",
       "eventLocation": "NewForce Zoom Room",
       "eventDetails": "Celebrating our successful completion of NewForce! Congratulations, everyone!"
     },
     {
       "id": 2,
-      "userId": 1,
+      "userId": "1",
       "eventName": "St. Patty's Day",
-      "eventDate": "3/17/2021",
+      "eventDate": "1615953600000",
       "eventLocation": "Somewhere",
       "eventDetails": "Kiss me, I'm Irish!"
     },
     {
-      "userId": 2,
+      "userId": "2",
       "eventName": "Spring Break",
-      "eventDate": "2021-04-05",
+      "eventDate": "1617580800000",
       "eventLocation": "Who knows???",
       "eventDetails": "A week off from code!",
       "id": 4
+    },
+    {
+      "userId": "1",
+      "eventName": "New Year's Day",
+      "eventDate": "1609459200000",
+      "eventLocation": "Everywhere",
+      "eventDetails": "Happy new year!",
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "eventName": "MLK Day",
+      "eventDate": "1610928000000",
+      "eventLocation": "The US",
+      "eventDetails": "I have a dream...",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "eventName": "President's Day",
+      "eventDate": "1613347200000",
+      "eventLocation": "US",
+      "eventDetails": "What a dumb holiday",
+      "id": 7
+    },
+    {
+      "userId": "1",
+      "eventName": "Memorial Day",
+      "eventDate": "1622419200000",
+      "eventLocation": "The beach",
+      "eventDetails": "Three day weekend!",
+      "id": 8
+    },
+    {
+      "userId": "1",
+      "eventName": "Independence Day",
+      "eventDate": "1625356800000",
+      "eventLocation": "US",
+      "eventDetails": "Happy Fourth!",
+      "id": 9
+    },
+    {
+      "userId": "1",
+      "eventName": "Labor Day",
+      "eventDate": "1630886400000",
+      "eventLocation": "Somewhere cool, hopefully",
+      "eventDetails": "Another 3 day weekend!",
+      "id": 10
     }
   ],
   "friends": [

@@ -10,7 +10,7 @@ export const newTaskButton = () => {
     <section class="task-form-container> 
         <div class="task-form-header">
             <h5 class="modal-title" id="staticBackdropLabel">Create New Task</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" aria-label="Close"></button>
 
         </div>
 
@@ -25,7 +25,7 @@ export const newTaskButton = () => {
                     <input type="date" name="date-to-complete" id="date">
                     
                     <!-- Save Task Button -->
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="saveTask">Save</button>
+                    <button type="button" class="btn btn-secondary" id="saveTask">Save</button>
                 </fieldset>
             </form>
         </div>

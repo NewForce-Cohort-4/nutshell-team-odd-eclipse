@@ -20,7 +20,7 @@ export const useEvents = () => {
     const upcomingEvents = sortedByDate.filter(event => {
         return event.eventDate >= Date.now()
     })
-
+    // console.log(upcomingEvents)
     return upcomingEvents
 }
 
