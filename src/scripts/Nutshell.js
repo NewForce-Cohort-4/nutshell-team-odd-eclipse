@@ -4,7 +4,11 @@ import { messages} from './chat/messageList.js'
 import { messageForm } from './chat/messageInput.js'
 //Patti imported
 import {ArticleList} from "./Articles/ArticleList.js"
+import { } from './Articles/ArticleEventHub.js'
+
+// David imported 
 import { eventList } from './events/eventList.js'
+import { } from './events/eventsEventHub.js'
 
 
 
@@ -21,7 +25,6 @@ export const Nutshell = () => {
     ArticleList()
     eventList()
     TaskList()
-    
 
           // Render all your UI components here
 }
