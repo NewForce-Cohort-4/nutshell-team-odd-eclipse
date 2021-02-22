@@ -43,14 +43,13 @@ export const eventList = () => {
 
 const render = () => {
     const eventListTarget = document.querySelector("#event-list")
-    const userID = sessionStorage.getItem("activeUser")
     const borderClass = ["border-primary border-4", "border-secondary"]
     const backgroundClass = ["style=background-color:lightgrey", ""]
     const textClass = ["text-primary", "text-secondary"]
     let eventsHTML = ""
 
     // Fetch events, cache events locally
-    getEvents(userID).then(() => {
+    getEvents().then(() => {
         let events = useEvents();
         let months = []
 

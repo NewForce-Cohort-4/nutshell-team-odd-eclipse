@@ -26,8 +26,9 @@ export const useEvents = () => {
 
 // Build a function to fetch events data from the local API 
 // and cache it in the locally scoped variable "events"
-export const getEvents = (userID) => {
-    
+export const getEvents = () => {
+    const userID = sessionStorage.getItem("activeUser")
+
     return fetch(eventsAPIurl + `?userId=${userID}`)
         .then(response => response.json())
         .then(

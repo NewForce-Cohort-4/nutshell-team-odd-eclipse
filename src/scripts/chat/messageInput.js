@@ -5,10 +5,14 @@ import { messages } from './messageList.js'
 export const messageForm = () => {
     const composeMessage = document.querySelector("#message-form")
     composeMessage.innerHTML = `
-    <h5>New Message</h5>
-    <input type="text" placeholder="Type Here..." id="note-text">
-    <div class="button-container">
-    <button type="submit" class="btn btn-secondary btn-success btn-sm" id="postMessage">Save Message</button>
+    <div class="messages-header">
+        <h5>Messages</h5>
+    </div>
+    <div class="new-message-form flex-container-row-even">
+        <input type="text" placeholder="Type Here..." id="message-text">
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary btn-sm" id="postMessage">Send</button>
+        </div>
     </div>
     `
 }
@@ -18,7 +22,7 @@ const eventHub = document.querySelector("#messages")
 eventHub.addEventListener("click", (clickEvent) => {
     if(clickEvent.target.id === "postMessage") {
 
-        let message = document.querySelector("#note-text")
+        let message = document.querySelector("#message-text")
         let dateOfMessage = `${new Date().toLocaleDateString('en-US')} | ${new Date().toTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true})}`
         let user = sessionStorage.getItem("activeUser")
 
@@ -30,6 +34,6 @@ eventHub.addEventListener("click", (clickEvent) => {
         saveMessage(newMessage)
         .then(() => {
             messages()
-         document.querySelector("#note-text").value = ""        
+         document.querySelector("#message-text").value = ""        
         })
     }})
