@@ -3,7 +3,7 @@ export const message = (messageObject, userObject) =>{
     let messageHTML = `
     <section>
     <p>"${messageObject.message}"</p>
-    <p>Date: ${messageObject.dateOfMessage}</p>
+    <p>Date / Time: ${messageObject.dateOfMessage}</p>
     <p>User: ${userObject.email}</p>
     </section>`
     // Delete Button appears only for the user who posted the message

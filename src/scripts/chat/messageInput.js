@@ -6,7 +6,6 @@ export const messageForm = () => {
     const composeMessage = document.querySelector("#messages")
     composeMessage.innerHTML = `
     <h2>New Message</h2>
-    <input type="date" id="date-text">
     <input type="text" placeholder="Type Here..." id="note-text">
     
     <button id="postMessage">Save Message</button>
@@ -19,14 +18,17 @@ eventHub.addEventListener("click", (clickEvent) => {
     if(clickEvent.target.id === "postMessage") {
 
         let message = document.querySelector("#note-text")
-        let dateOfMessage = document.querySelector("#date-text")
+        let dateOfMessage = `${new Date().toLocaleDateString('en-US')} | ${new Date().toTimeString('en-US', {hour: 'numeric', minute: 'numeric', hour12: true})}`
         let user = sessionStorage.getItem("activeUser")
 
         const newMessage = {
             message: message.value,
             userId: user,
-            dateOfMessage: dateOfMessage.value,
+            dateOfMessage: dateOfMessage,
         }
         saveMessage(newMessage)
-        .then(messages)
+        .then(() => {
+            messages()
+         document.querySelector("#note-text").value = ""        
+        })
     }})
