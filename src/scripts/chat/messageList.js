@@ -6,7 +6,7 @@ import { useUsers, getUsers } from '../Users/UserDataProvider.js'
 export const messages = () => {
     const messageList = document.querySelector("#message-list")
     getMessages()
-    .then(getUsers()
+    .then(getUsers)
     .then(() => {
         let messageHTML = ""
         let allMessages = useMessages()
@@ -16,7 +16,7 @@ export const messages = () => {
            messageHTML += message(thisMessage, userHTML)
         }
         messageList.innerHTML = messageHTML
-    }))
+    })
 }
 
 // Delete button action when clicked 
