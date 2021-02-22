@@ -47,6 +47,7 @@ eventHub.addEventListener("click", clickEvent => {
         }
         
         saveTask(newTask) //saves the task
-        .then(TaskList) // Refreshes your list once you've saved your new one
+        .then(TaskList)
+        newTaskButton() // Refreshes your list once you've saved your new one
     }
 })

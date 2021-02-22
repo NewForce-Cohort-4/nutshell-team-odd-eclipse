@@ -12,4 +12,6 @@ export const Task = (taskNote) => {
         </div>
     </section>
     `
+    
 }
+
