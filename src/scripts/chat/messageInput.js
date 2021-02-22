@@ -7,8 +7,9 @@ export const messageForm = () => {
     composeMessage.innerHTML = `
     <h5>New Message</h5>
     <input type="text" placeholder="Type Here..." id="note-text">
-    
+    <div class="button-container">
     <button type="submit" class="btn btn-secondary btn-success btn-sm" id="postMessage">Save Message</button>
+    </div>
     `
 }
 
