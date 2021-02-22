@@ -18,7 +18,7 @@ eventHub.addEventListener("click", (eventObject) => {
         document.querySelector("#messages").innerHTML = ""
         document.querySelector("#tasks").innerHTML = ""
         document.querySelector("#events").innerHTML = ""
-        document.querySelector("#message-list").innerHTML = ""
+        // document.querySelector("#message-list").innerHTML = ""
 
 
         // This will clear the logout button from the DOM-- you'd just have to do this individually for any other containers you add

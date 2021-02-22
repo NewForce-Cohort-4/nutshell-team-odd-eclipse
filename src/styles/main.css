@@ -19,7 +19,7 @@
     flex-direction: column;
 }
 
-.scrollable-container-events {
+.scrollable-container-med {
     height: 30vh;
     /* max-height: 10%; */
     overflow-x: hidden;
@@ -27,7 +27,7 @@
     /* background-color: darkgrey; */
 }
 
-.scrollable-container-messages {
+.scrollable-container-sm {
     height: 20vh;
     /* max-height: 10%; */
     overflow-x: hidden;

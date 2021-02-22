@@ -28,7 +28,7 @@ export const eventList = () => {
                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="addEvent">+ Event</button>
                     </div>
                 </div>
-                <div class="scrollable-container-events">
+                <div class="scrollable-container-med">
                     <div class="flex-container-col" id="event-list">
                     
                     </div>
