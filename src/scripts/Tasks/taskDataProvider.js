@@ -1,50 +1,37 @@
-// Author: Mandy Campbell
-
-// Purpose: run fetch call to gather data with get, post, save, and delete
-
 let tasks = []
 
-export const useTasks = () => {
-    // returns a copy of the tasks array
-    return tasks.slice()
+export const useTask = () => tasks.slice()
+
+
+
+export const getTask = () => {
+    const userID = sessionStorage.getItem("activeUser")
+    return fetch(`http://localhost:8088/tasks?userId=${userID}`) //fetch call to json server
+        .then(response => response.json()) // turn into javascript
+        .then(parsedTask => {
+            tasks = parsedTask // store variable in notes
+        })
+
 }
 
-export const getTasks = () => {
-    return fetch (`http://localhost:8088/tasks`)
-    .then(response => response.json())
-    .then(parsedTasks => {
-        tasks = parsedTasks
-    })
-}
-
-export const saveTask = task => {
+export const saveTask = task => { //
     return fetch('http://localhost:8088/tasks', {
-        method: "POST",
+        method: "POST", // makes a post request - POST means add something 
         headers: {
-            "Content-type": "application/json"
+            "Content-Type": "application/json"
         },
-        body: JSON.stringify(task)
-    
+        body: JSON.stringify(task) // the thing its going to send is a jsonified note we just built
     })
 }
 
-export const updateStatus = (taskId,completed) => {
-    return fetch(`http://localhost:8088/tasks/${taskId}`,{
-        method: "PATCH",
-        headers: {
-            "Content-Type" : "application/json"
-        },
-        body: JSON.stringify(
-            {
-                // changing the status 
-              "completed": completed        
-            }
-        )
-    });
-}
-
-export const deleteTask = taskId => {
+export const moveNote = taskId => {
     return fetch(`http://localhost:8088/tasks/${taskId}`, {
-        method: "DELETE"
+        method: "PATCH",
+        headers: {'Content-type': 'application/json'},
+        body: JSON.stringify({
+            completed: true,
+        }),
     })
+    .then(response => response.json())
+    .then(data => console.log(data))
 }
