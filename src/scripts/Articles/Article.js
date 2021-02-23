@@ -14,7 +14,7 @@ export function article (articleObject) {
 	    </div>
 	    <div class="card-body">
 		    <p>${articleObject.synopsis}</p>
-		    <p>${articleObject.url}</p>
+		    <p><a href=${articleObject.url}>${articleObject.url}</a></p>
 	    </div>
     </div>
     `

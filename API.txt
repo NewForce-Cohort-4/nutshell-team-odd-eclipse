@@ -2,84 +2,209 @@
   "users": [
     {
       "id": 1,
-      "email": "me@me.com"
+      "email": "me@me.com",
+      "userName": "",
+      "profilePicture": ""
     },
     {
       "id": 2,
-      "email": "you@you.com"
+      "email": "you@you.com",
+      "userName": "",
+      "profilePicture": ""
     }
   ],
   "messages": [
     {
-      "id": 1,
-      "userId": 1,
-      "message": "What's up?"
-    },
-    {
-      "id": 2,
-      "userId": 1,
-      "message": "You there?"
-    },
-    {
       "id": 3,
-      "userId": 1,
-      "message": "DUDEEEE"
+      "userId": "1",
+      "message": "DUDEEEE",
+      "dateOfMessage": "2021-02-18"
     },
     {
       "id": 4,
-      "userId": 2,
-      "message": "Yoooooo"
+      "userId": "2",
+      "message": "Yoooooo",
+      "dateOfMessage": "2021-02-19"
     },
     {
       "id": 5,
-      "userId": 2,
-      "message": "Snow day tomorrow!"
+      "userId": "2",
+      "message": "Snow day tomorrow!",
+      "dateOfMessage": "2021-02-19"
+    },
+    {
+      "message": "hello",
+      "userId": "1",
+      "dateOfMessage": "2021-02-19",
+      "id": 6
+    },
+    {
+      "message": "hello",
+      "userId": "1",
+      "dateOfMessage": "2021-02-19",
+      "id": 8
+    },
+    {
+      "message": "hello",
+      "userId": "1",
+      "dateOfMessage": "2021-02-22",
+      "id": 9
+    },
+    {
+      "message": "HOLA",
+      "userId": "1",
+      "dateOfMessage": "2021-02-19",
+      "id": 10
+    },
+    {
+      "message": "testing....",
+      "userId": "1",
+      "dateOfMessage": "2021-02-19",
+      "id": 12
+    },
+    {
+      "message": "happy new year",
+      "userId": "1",
+      "dateOfMessage": "2021-01-01",
+      "id": 13
+    },
+    {
+      "message": "happy newforce",
+      "userId": "1",
+      "dateOfMessage": "2021-01-04",
+      "id": 14
+    },
+    {
+      "message": "hello, monday",
+      "userId": "1",
+      "dateOfMessage": "2021-02-22",
+      "id": 15
+    },
+    {
+      "message": "yo yo yo",
+      "userId": "1",
+      "dateOfMessage": "2/22/2021 | 13:48:36 GMT-0500 (Eastern Standard Time)",
+      "id": 16
     }
   ],
   "articles": [
     {
       "id": 1,
-      "userId": 1,
+      "userId": "1",
       "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/",
       "title": "Wormholes Allow Information to Escape Black Holes",
-      "synopsis": "Check out this recent discovery about workholes"
+      "synopsis": "Check out this recent discovery about workholes",
+      "timeStamp": "2021-02-15T16:47:09.464Z"
     },
     {
       "id": 2,
-      "userId": 1,
+      "userId": "1",
       "url": "https://getpocket.com/explore/item/why-an-old-theory-of-everything-is-gaining-new-life?utm_source=pocket-newtab",
       "title": "Why an Old Theory of Everything Is Gaining New Life",
-      "synopsis": "For decades, physicists have struggled to create a quantum theory of gravity. Now an approach that dates to the 1970s is attracting newfound attention."
+      "synopsis": "For decades, physicists have struggled to create a quantum theory of gravity. Now an approach that dates to the 1970s is attracting newfound attention.",
+      "timeStamp": "2021-02-10T16:47:09.464Z"
     },
     {
       "id": 3,
-      "userId": 2,
+      "userId": "2",
       "url": "https://www.nbcnews.com/news/us-news/how-billions-pandemic-aid-was-swindled-con-artists-crime-syndicates-n1257766?utm_source=pocket-newtab",
       "title": "How billions in pandemic aid was swindled by con artists and crime syndicates",
-      "synopsis": "A senior federal law enforcement source said the fraud is so complex and multilayered that it will take months to develop a full accounting."
+      "synopsis": "A senior federal law enforcement source said the fraud is so complex and multilayered that it will take months to develop a full accounting.",
+      "timeStamp": "2021-02-18T16:47:09.464Z"
+    },
+    {
+      "userId": "1",
+      "title": "Highlights From NASA’s Successful Landing on Mars",
+      "synopsis": "The spacecraft’s journey to the red planet was a success, extending the American record of safe landings there to six.",
+      "url": "https://www.nytimes.com/live/2021/02/18/science/nasa-mars-landing",
+      "timeStamp": "2021-02-19T16:47:09.464Z",
+      "id": 4
     }
   ],
   "tasks": [
     {
       "id": 1,
-      "userId": 1,
+      "userId": "1",
       "task": "Take out garbage",
-      "dueDate": "2/20/2021",
-      "complete": false
+      "date": "2/20/2021",
+      "completed": true
     },
     {
       "id": 2,
-      "userId": 2,
+      "userId": "2",
       "task": "Buy groceries",
-      "dueDate": "2/20/2021",
-      "complete": false
+      "date": "2/20/2021",
+      "completed": false
     },
     {
       "id": 3,
-      "userId": 2,
+      "userId": "2",
       "task": "Take a nap",
-      "dueDate": "2/20/2021",
-      "complete": false
+      "date": "2/20/2021",
+      "completed": false
+    },
+    {
+      "date": "2021-02-22",
+      "task": "exercise",
+      "completed": false,
+      "userId": "1",
+      "id": 4
+    },
+    {
+      "date": "2021-02-22",
+      "task": "clean room",
+      "completed": false,
+      "userId": "1",
+      "id": 5
+    },
+    {
+      "date": "2021-02-24",
+      "task": "test",
+      "completed": true,
+      "userId": "1",
+      "id": 6
+    },
+    {
+      "date": "2021-02-24",
+      "task": "test",
+      "completed": true,
+      "userId": "1",
+      "id": 7
+    },
+    {
+      "date": "2021-02-24",
+      "task": "test",
+      "completed": false,
+      "userId": "1",
+      "id": 8
+    },
+    {
+      "date": "2021-02-25",
+      "task": "testy test",
+      "completed": true,
+      "userId": "1",
+      "id": 9
+    },
+    {
+      "date": "2021-02-25",
+      "task": "testy test",
+      "completed": false,
+      "userId": "1",
+      "id": 10
+    },
+    {
+      "date": "2021-02-24",
+      "task": "this is a test",
+      "completed": true,
+      "userId": "1",
+      "id": 11
+    },
+    {
+      "date": "2021-02-24",
+      "task": "tell Tommy he is awesome",
+      "completed": false,
+      "userId": "1",
+      "id": 12
     }
   ],
   "events": [
@@ -133,14 +258,6 @@
     },
     {
       "userId": "1",
-      "eventName": "Memorial Day",
-      "eventDate": "1622419200000",
-      "eventLocation": "The beach",
-      "eventDetails": "Three day weekend!",
-      "id": 8
-    },
-    {
-      "userId": "1",
       "eventName": "Independence Day",
       "eventDate": "1625356800000",
       "eventLocation": "US",
@@ -154,13 +271,57 @@
       "eventLocation": "Somewhere cool, hopefully",
       "eventDetails": "Another 3 day weekend!",
       "id": 10
+    },
+    {
+      "userId": "1",
+      "eventName": "Thanksgiving",
+      "eventDate": 1637798400000,
+      "eventLocation": "Family's house",
+      "eventDetails": "Can't wait to stuff my face!",
+      "id": 11
+    },
+    {
+      "userId": "1",
+      "eventName": "Today",
+      "eventDate": 1613952000000,
+      "eventLocation": "my chair",
+      "eventDetails": "testing...",
+      "id": 12
+    },
+    {
+      "userId": "1",
+      "eventName": "Nutshell Due",
+      "eventDate": 1614038400000,
+      "eventLocation": "Zoom",
+      "eventDetails": "our group project, Nutshell, is due",
+      "id": 13
     }
   ],
   "friends": [
     {
       "id": 1,
       "userId": 1,
-      "following": 3
+      "followingId": 3
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "followingId": 3
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "followingId": 3
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "followingId": 3
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "followingId": 3
     }
   ]
 }

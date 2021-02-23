@@ -30,7 +30,7 @@ export const eventForm = () => {
             <input type="text" name="event-location" id="event-location">
 
             <label for="event-details">Details</label>
-            <textarea name="event-details" id="event-details" cols="30" rows="10"></textarea>
+            <textarea name="event-details" id="event-details" cols="30" rows="5"></textarea>
 
             <!-- Record Entry Button -->
             <button type="button" class="btn btn-primary btn-lg" data-bs-dismiss="modal" id="save-event">Save</button>

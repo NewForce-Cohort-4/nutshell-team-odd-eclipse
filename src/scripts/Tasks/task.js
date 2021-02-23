@@ -1,12 +1,10 @@
 export const Task = (taskNote) => {
     return `
         <div class = "task-card col">
-            <div class="flex-container-row-even">
-                <div class="checkbox-container flex-container-row">
-                    <input type="checkbox" id="completeNote--${taskNote.id}">
-                    <p style="padding-left: 0.5em; padding-right: 0.5em;">${taskNote.task}</p>
-                </div>
-                <p class="date-subdued" style="align-content:right;" >${taskNote.date}</p>
+            <div class="flex-container-row-even checkbox-container">
+                <input type="checkbox" style="width: 10%;" id="completeNote--${taskNote.id}">
+                <p style="align-text: left; width: 60%; margin-bottom: 0;">${taskNote.task}</p>
+                <p class="date-subdued" style="align-text: right; width: 25%;">${taskNote.date}</p>
             </div>
         </div>
     `
