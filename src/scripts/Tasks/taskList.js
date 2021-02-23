@@ -19,10 +19,8 @@ export const TaskList = () => { // in charge of getting the tasks and printing t
 
         for (let currentTaskInLoop of allTasks){
             taskListHTMLString += Task(currentTaskInLoop)
-            // console.log(Task)
         };
-        taskContainer.innerHTML = `<h2>Task List</h2>${taskListHTMLString}`
-        
+        taskContainer.innerHTML = `<h5>Task List</h5><section class = "task-container flex-container scrollable-container-sm">${taskListHTMLString}</section>`
     }) 
 }
 

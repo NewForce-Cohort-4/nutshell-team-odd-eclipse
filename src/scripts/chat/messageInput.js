@@ -3,12 +3,13 @@ import { messages } from './messageList.js'
 
 //Form to fill out for new message
 export const messageForm = () => {
-    const composeMessage = document.querySelector("#messages")
+    const composeMessage = document.querySelector("#message-form")
     composeMessage.innerHTML = `
-    <h2>New Message</h2>
+    <h5>New Message</h5>
     <input type="text" placeholder="Type Here..." id="note-text">
-    
+    <div class="button-container">
     <button type="submit" class="btn btn-secondary btn-success btn-sm" id="postMessage">Save Message</button>
+    </div>
     `
 }
 

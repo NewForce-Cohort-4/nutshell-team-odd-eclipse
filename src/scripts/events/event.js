@@ -5,10 +5,10 @@
  */
 
 // Build function to build an HTML event card given an event object
-export const eventCard = (eventData, borderClass, textClass) => {
+export const eventCard = (eventData, borderClass, textClass, backgroundClass) => {
     
     return `
-    <div class="card ${borderClass}">
+    <div class="card ${borderClass}" ${backgroundClass}>
         <div class="card-header flex-container-row-even">
             <h6>${eventData.eventName}</h6>
             <div class="button-container">

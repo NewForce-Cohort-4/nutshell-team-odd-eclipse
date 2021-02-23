@@ -1,6 +1,5 @@
 export const Task = (taskNote) => {
     return `
-    <section class = "task-container flex-container"
         <div class = "task-card">
             <p>Task: ${taskNote.task}</p>
             <p>Date: ${taskNote.date}</p>
@@ -10,7 +9,6 @@ export const Task = (taskNote) => {
             
             </div>
         </div>
-    </section>
     `
     
 }
