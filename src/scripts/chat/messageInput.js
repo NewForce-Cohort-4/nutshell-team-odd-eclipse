@@ -9,7 +9,7 @@ export const messageForm = () => {
         <h5>Messages</h5>
     </div>
     <div class="new-message-form flex-container-row-even">
-        <input type="text" placeholder="Type Here..." id="message-text">
+        <input type="text" class="inline-input-text" size="30" placeholder="New message..." id="message-text">
         <div class="button-container">
             <button type="submit" class="btn btn-primary btn-sm" id="postMessage">Send</button>
         </div>

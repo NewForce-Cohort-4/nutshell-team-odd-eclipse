@@ -21,10 +21,8 @@
 
 .scrollable-container-med {
     height: 30vh;
-    /* max-height: 10%; */
     overflow-x: hidden;
     border: 1px solid navyblue;
-    /* background-color: darkgrey; */
 }
 
 .scrollable-container-sm {
@@ -35,19 +33,6 @@
     /* background-color: darkgrey; */
 }
 
-.scrollable-container-main {
-    height: max-content;
-    max-height: 90%;
-    overflow-x: hidden;
-    /* background-color: darkgrey; */
-}
-
-.row {
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    padding: 0.5em;
-}
-
 .card {
     border: 1px solid darkgrey;
     border-radius: 10px;
@@ -55,8 +40,6 @@
 }
 
 .message-row{
-    /* background-color: lightblue; */
-    /* border: 1px solid black; */
     border-radius: 10px;
     margin: 1vh;
 }
@@ -68,8 +51,18 @@
 }
 
 .date-subdued {
-    color: lightgrey;
+    color: darkgrey;
     padding: 0;
     margin: 0;
     font-size: x-small;
+}
+
+.inline-input-text {
+    font-size: small;
+    border-radius: 10px;
+    border: 1px solid darkgrey;
+}
+
+.checkbox-container {
+    align-items: center;
 }

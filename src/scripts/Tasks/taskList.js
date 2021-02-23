@@ -1,5 +1,6 @@
 import { getTask, useTask, moveNote } from './TaskDataProvider.js';
 import { Task } from './task.js';
+import { TaskForm } from './taskForm.js'
 
 const taskContainer = document.querySelector(".tasklistContainer");
 
@@ -20,8 +21,21 @@ export const TaskList = () => { // in charge of getting the tasks and printing t
         for (let currentTaskInLoop of allTasks){
             taskListHTMLString += Task(currentTaskInLoop)
         };
-        taskContainer.innerHTML = `<h5>Task List</h5><section class = "task-container flex-container scrollable-container-sm">${taskListHTMLString}</section>`
+        taskContainer.innerHTML = `
+        <h5>Task List</h5>
+        <div class="taskFormContainer" style="margin-bottom: 0.5em">
+            
+        </div>
+        <section class = "task-container flex-container scrollable-container-sm">
+            ${taskListHTMLString}
+        </section>`
+
+        renderForm()
     }) 
+}
+
+const renderForm = () => {
+    TaskForm()
 }
 
 eventHub.addEventListener("change", (eventObject)=> {
