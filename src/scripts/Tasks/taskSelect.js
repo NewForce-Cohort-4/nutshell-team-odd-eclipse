@@ -1,10 +1,10 @@
-const eventHub = document.querySelector("body")
+// const eventHub = document.querySelector("body")
 
 
 
-document.querySelector("body").addEventListener("click", clickEvent => {
-    if(clickEvent.target.id === "#newButtonContainer") {
-        TaskForm()
-    }
-})
+// document.querySelector("body").addEventListener("click", clickEvent => {
+//     if(clickEvent.target.id === "#newButtonContainer") {
+//         TaskForm()
+//     }
+// })
 

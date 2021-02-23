@@ -1,20 +1,7 @@
 import { saveTask } from './TaskDataProvider.js';
 import { TaskList } from './TaskList.js';
 
-const contentTarget = document.querySelector(".taskFormContainer")
-const eventHub = document.querySelector(".taskFormContainer")
-
-const render = () => {
-    contentTarget.innerHTML = `
-    <div class = "newTask">
-    <button id="newTaskButton">Enter a new task</button>
-    </div>`
-}
-
-export const newTaskButton = () => {
-    render()
-
-}
+const eventHub = document.querySelector(".tasklistContainer")
 
 document.querySelector("body").addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "newTaskButton") {
@@ -24,11 +11,13 @@ document.querySelector("body").addEventListener("click", clickEvent => {
 
 // the following builds the form - needs an input or property of the note
 export const TaskForm = () => {
+    const contentTarget = document.querySelector(".taskFormContainer")
+
     contentTarget.innerHTML = `
-    <fieldset>
-    <input type="date" id = "date"></input>
-    <input type="text" placeholder="Enter task here" id="task"> </input>
-    <button id="saveTask">Save Task</button>
+    <fieldset class="flex-container-row">
+        <button class="btn btn-outline-primary btn-sm" id="saveTask">+</button>
+        <input type="text" class="inline-input-text" size="27" placeholder="New task..." id="task-text"> </input>
+        <input type="date" id="task-date" style="border-radius: 10px;"></input>
     </fieldset>
     `
 }
@@ -40,14 +29,13 @@ eventHub.addEventListener("click", clickEvent => {
 
         const newTask = {
             //gets the value or inputs and stores in an object
-            date: document.querySelector("#date").value,
-            task: document.querySelector("#task").value,
+            date: document.querySelector("#task-date").value,
+            task: document.querySelector("#task-text").value,
             completed: false,
             userId: sessionStorage.getItem("activeUser")
         }
         
         saveTask(newTask) //saves the task
         .then(TaskList)
-        newTaskButton() // Refreshes your list once you've saved your new one
     }
 })

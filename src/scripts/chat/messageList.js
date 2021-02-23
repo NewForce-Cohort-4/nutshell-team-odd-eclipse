@@ -11,6 +11,15 @@ export const messages = () => {
         let messageHTML = ""
         let allMessages = useMessages()
         let allUsers = useUsers()
+
+        if (allMessages.length === 0) {
+            eventsHTML += `
+            <div class="">
+                <h6>No Upcoming Events</h6>
+            </div>
+            `
+        }
+
         for(let thisMessage of allMessages){
             const userHTML = allUsers.find(userObject => userObject.id === +thisMessage.userId)
            messageHTML += message(thisMessage, userHTML)
@@ -22,7 +31,7 @@ export const messages = () => {
 // Delete button action when clicked 
 const eventHub = document.querySelector("#message-list")
 eventHub.addEventListener("click", (eventObject) => {
-    if(eventObject.target.id.startsWith("deleteNote--")) {
+    if(eventObject.target.id.startsWith("deleteMessage--")) {
         const messageToDelete = eventObject.target.id.split("--")[1]
         const currentMessage = useMessages().find((message) => {
             return message.id === parseInt(messageToDelete)
