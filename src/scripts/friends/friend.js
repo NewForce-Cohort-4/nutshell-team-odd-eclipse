@@ -1,1 +1,32 @@
-<a href="https://www.freepik.com/vectors/people">People vector created by ddraw - www.freepik.com</a>
+/* 
+ * DTB
+ * This module serves to provide HTML for each event object
+ * from the local API.
+ */
+
+// Build function to build an HTML event card given an event object
+export const friendCard = (friendData, relID) => {
+    
+    return `
+    <div class="friend-card">
+        <div class="friend-info">
+            <img src="${friendData.profilePicture}" class="profile-picture" alt="...">
+            <h6 style="text-align: center;">${friendData.userName}</h6>
+            <button type="button" class="btn btn-outline-danger btn-sm rounded-pill" id="unfollow-friend--${relID}">Unfollow</button>
+        </div>
+    </div>
+    `
+}
+
+export const newFriendCard = (friendData, relID) => {
+    
+    return `
+    <div class="friend-card">
+        <div class="friend-info">
+            <img src="${friendData.profilePicture}" class="profile-picture" alt="...">
+            <h6 style="text-align: center;">${friendData.userName}</h6>
+            <button type="button" class="btn btn-primary btn-sm rounded-pill" id="follow-friend--${relID}">Follow</button>
+        </div>
+    </div>
+    `
+}
