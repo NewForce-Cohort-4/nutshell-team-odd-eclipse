@@ -13,7 +13,7 @@ export const message = (messageObject, userObject) =>{
 
     let messageHTML = `
     <div class="row">
-        <p class="date-subdued" style="text-align: center;">${messageObject.dateOfMessage}</p>
+        <p class="subdued" style="text-align: center;">${messageObject.dateOfMessage}</p>
     </div>
     <div class="row message-row" ${bckgrndColor}>
         <div class="message-container col-sm-8" style="width: 85%;">

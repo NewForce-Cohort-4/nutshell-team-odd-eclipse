@@ -6,10 +6,11 @@ import {saveArticles, deleteArticles} from "./ArticleDataProvider.js"
 import {ArticleList} from "./ArticleList.js"
 
 //container in index.html the eventListener is targeting
-const eventHub = document.querySelector("main")
+const eventHub = document.querySelector("body")
 
 //add eventListener to eventHub, add click-event
 eventHub.addEventListener("click", eventObject => {
+    console.log(eventObject.target.id)
     //conditional for if user clicks on the Create Article button
     if(eventObject.target.id === "createArticle") {
         //print the form for a new article
@@ -17,6 +18,7 @@ eventHub.addEventListener("click", eventObject => {
     }
     //conditional for if user clicks on the save button
     else if (eventObject.target.id === "saveArticle") {
+        console.log(eventObject)
         //create a new article/object
         const newArticle = {
             userId: sessionStorage.getItem("activeUser"),

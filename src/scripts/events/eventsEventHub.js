@@ -16,7 +16,7 @@ import { saveEvent, deleteEvent } from './eventDataProvider.js'
 import { eventList } from './eventList.js'
 
 // Define the target container for the event listeners
-const eventHub = document.querySelector('main')
+const eventHub = document.querySelector('body')
 
 // Add a click-event listener
 eventHub.addEventListener("click", eventObject => {

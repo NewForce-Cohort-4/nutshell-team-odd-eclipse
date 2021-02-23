@@ -2,9 +2,9 @@ import { getTask, useTask, moveNote } from './TaskDataProvider.js';
 import { Task } from './task.js';
 import { TaskForm } from './taskForm.js'
 
-const taskContainer = document.querySelector(".tasklistContainer");
+const taskContainer = document.querySelector("#tasks");
 
-const eventHub = document.querySelector(".tasklistContainer")
+const eventHub = document.querySelector("#tasks")
 
 export const TaskList = () => { // in charge of getting the tasks and printing them
     getTask() //gets task lists from database
@@ -22,13 +22,15 @@ export const TaskList = () => { // in charge of getting the tasks and printing t
             taskListHTMLString += Task(currentTaskInLoop)
         };
         taskContainer.innerHTML = `
+        <article class="row" id="tasklistContainer">
         <h5>Task List</h5>
         <div class="taskFormContainer" style="margin-bottom: 0.5em">
             
         </div>
         <section class = "task-container flex-container scrollable-container-sm">
             ${taskListHTMLString}
-        </section>`
+        </section>
+        </article>`
 
         renderForm()
     }) 

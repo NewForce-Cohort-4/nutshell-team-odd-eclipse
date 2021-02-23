@@ -13,6 +13,7 @@ export const getFriends = () => {
 }
 
 export const unfollow = relId => {
+    console.log(relId)
     return fetch(`http://localhost:8088/friends/${relId}`, {
         method: "DELETE",
         })  
