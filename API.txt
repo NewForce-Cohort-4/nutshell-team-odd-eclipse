@@ -3,14 +3,38 @@
     {
       "id": 1,
       "email": "me@me.com",
-      "userName": "",
-      "profilePicture": ""
+      "userName": "RAYLA",
+      "profilePicture": "/scripts/friends/nutshell-prof-pics/woman3.jpg"
     },
     {
       "id": 2,
       "email": "you@you.com",
-      "userName": "",
-      "profilePicture": ""
+      "userName": "JAMES",
+      "profilePicture": "/scripts/friends/nutshell-prof-pics/man1.jpg"
+    },
+    {
+      "id": 3,
+      "email": "carl@carl.com",
+      "userName": "CARL",
+      "profilePicture": "/scripts/friends/nutshell-prof-pics/man2.jpg"
+    },
+    {
+      "id": 4,
+      "email": "jane@jane.com",
+      "userName": "JANE",
+      "profilePicture": "/scripts/friends/nutshell-prof-pics/woman1.jpg"
+    },
+    {
+      "id": 5,
+      "email": "john@john.com",
+      "userName": "JOHN",
+      "profilePicture": "/scripts/friends/nutshell-prof-pics/man3.jpg"
+    },
+    {
+      "id": 6,
+      "email": "tess@tess.com",
+      "userName": "TESS",
+      "profilePicture": "/scripts/friends/nutshell-prof-pics/woman2.jpg"
     }
   ],
   "messages": [
@@ -57,12 +81,6 @@
       "id": 10
     },
     {
-      "message": "testing....",
-      "userId": "1",
-      "dateOfMessage": "2021-02-19",
-      "id": 12
-    },
-    {
       "message": "happy new year",
       "userId": "1",
       "dateOfMessage": "2021-01-01",
@@ -81,10 +99,10 @@
       "id": 15
     },
     {
-      "message": "yo yo yo",
+      "message": "hi we are testing our nutshell application",
       "userId": "1",
-      "dateOfMessage": "2/22/2021 | 13:48:36 GMT-0500 (Eastern Standard Time)",
-      "id": 16
+      "dateOfMessage": "2/23/2021 | 13:24:11 GMT-0500 (Eastern Standard Time)",
+      "id": 17
     }
   ],
   "articles": [
@@ -114,11 +132,27 @@
     },
     {
       "userId": "1",
-      "title": "Highlights From NASA’s Successful Landing on Mars",
-      "synopsis": "The spacecraft’s journey to the red planet was a success, extending the American record of safe landings there to six.",
-      "url": "https://www.nytimes.com/live/2021/02/18/science/nasa-mars-landing",
-      "timeStamp": "2021-02-19T16:47:09.464Z",
+      "title": "Is Your 401(k) Colluding To Make Cereal More Expensive?",
+      "synopsis": "A new study investigates whether common ownership of cereal makers by institutional investors is leading them to become a kind of stealth monopoly.",
+      "url": "https://www.npr.org/sections/money/2021/01/26/960220477/is-your-401-k-colluding-to-make-cereal-more-expensive",
+      "timeStamp": "2021-02-23T20:14:08.286Z",
       "id": 4
+    },
+    {
+      "userId": "2",
+      "title": "Is Your 401(k) Colluding To Make Cereal More Expensive?",
+      "synopsis": "A new study investigates whether common ownership of cereal makers by institutional investors is leading them to become a kind of stealth monopoly.",
+      "url": "https://www.npr.org/sections/money/2021/01/26/960220477/is-your-401-k-colluding-to-make-cereal-more-expensive",
+      "timeStamp": "2021-02-23T20:40:46.021Z",
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "title": "Man Allegedly Hid From Coronavirus And Authorities In Chicago Airport For 3 Months",
+      "synopsis": "The California man was arrested Saturday on felony trespassing charges, prosecutors say. He apparently had obtained airport credentials and survived on food from strangers.",
+      "url": "https://www.npr.org/2021/01/18/958081547/man-allegedly-hid-from-coronavirus-and-authorities-in-chicago-airport-for-3-mont",
+      "timeStamp": "2021-02-23T20:47:32.312Z",
+      "id": 6
     }
   ],
   "tasks": [
@@ -174,7 +208,7 @@
     {
       "date": "2021-02-24",
       "task": "test",
-      "completed": false,
+      "completed": true,
       "userId": "1",
       "id": 8
     },
@@ -202,9 +236,23 @@
     {
       "date": "2021-02-24",
       "task": "tell Tommy he is awesome",
-      "completed": false,
+      "completed": true,
       "userId": "1",
       "id": 12
+    },
+    {
+      "date": "2021-02-24",
+      "task": "finish nutshell",
+      "completed": false,
+      "userId": "1",
+      "id": 13
+    },
+    {
+      "date": "2021-02-23",
+      "task": "go for a walk",
+      "completed": true,
+      "userId": "1",
+      "id": 14
     }
   ],
   "events": [
@@ -266,14 +314,6 @@
     },
     {
       "userId": "1",
-      "eventName": "Labor Day",
-      "eventDate": "1630886400000",
-      "eventLocation": "Somewhere cool, hopefully",
-      "eventDetails": "Another 3 day weekend!",
-      "id": 10
-    },
-    {
-      "userId": "1",
       "eventName": "Thanksgiving",
       "eventDate": 1637798400000,
       "eventLocation": "Family's house",
@@ -295,33 +335,51 @@
       "eventLocation": "Zoom",
       "eventDetails": "our group project, Nutshell, is due",
       "id": 13
+    },
+    {
+      "userId": "2",
+      "eventName": "The Weekend!",
+      "eventDate": 1614384000000,
+      "eventLocation": "here",
+      "eventDetails": "It's the weekend!",
+      "id": 16
     }
   ],
   "friends": [
     {
       "id": 1,
-      "userId": 1,
-      "followingId": 3
+      "userId": "1",
+      "followingId": "2"
     },
     {
-      "id": 1,
-      "userId": 1,
-      "followingId": 3
+      "userId": "2",
+      "followingId": "3",
+      "id": 8
     },
     {
-      "id": 1,
-      "userId": 1,
-      "followingId": 3
+      "userId": "1",
+      "followingId": "4",
+      "id": 9
     },
     {
-      "id": 1,
-      "userId": 1,
-      "followingId": 3
+      "userId": "2",
+      "followingId": "4",
+      "id": 10
     },
     {
-      "id": 1,
-      "userId": 1,
-      "followingId": 3
+      "userId": "2",
+      "followingId": "6",
+      "id": 11
+    },
+    {
+      "userId": "1",
+      "followingId": "6",
+      "id": 12
+    },
+    {
+      "userId": "1",
+      "followingId": "5",
+      "id": 13
     }
   ]
 }

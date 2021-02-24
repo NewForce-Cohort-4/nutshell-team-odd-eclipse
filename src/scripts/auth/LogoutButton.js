@@ -11,13 +11,16 @@ export const LogOutButton = () => {
 eventHub.addEventListener("click", (eventObject) => {
     if(eventObject.target.id === "logout-button"){
         // clear session storage
+        sessionStorage.setItem("activeUser", 0)
         sessionStorage.clear()
 
         // If you want to clear the DOM when you log out, select individual containers here and set their innerHTML property to an empty string
         document.querySelector("#articles").innerHTML = ""
-        document.querySelector("#messages").innerHTML = ""
+        document.querySelector("#message-form").innerHTML = ""
+        document.querySelector("#message-list").innerHTML = ""
         document.querySelector("#tasks").innerHTML = ""
         document.querySelector("#events").innerHTML = ""
+        document.querySelector("#friends").innerHTML = ""
         // document.querySelector("#message-list").innerHTML = ""
 
 

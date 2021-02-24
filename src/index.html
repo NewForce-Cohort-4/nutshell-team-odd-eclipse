@@ -18,34 +18,41 @@
             <section class="auth--register"></section>
         </article>
     </header>
-    <main class="row" id="dashboard">
+    <main class="col" id="dashboard">
         <!-- All your Nutshell are belong here -->
-        <section class="main-content col-lg-8 col-sm-8" id="articles">
-            
-        </section>
-        <aside class="sidebar col-lg-4 col-sm-4">
-            
-            <!--Where messages are being printed to-->
-            <div class="row" id="messages">
-                <div class="row" id="message-form">
-                    <!-- New Message form prints here -->
-                </div>
-                <div class="container scrollable-container-sm" id="message-list">
-                    <!-- List of messages prints here -->
-                </div>
-            </div>
-                                
-            <div class="row border-top border-2" id="tasks">
-                <article class="row tasklistContainer">
-                    <!-- Task List Prints here -->
+        <section class="row main-container">
+            <section class="main-content col-lg-8 col-sm-8">
+                <article class="flex-container-col" id="friends"> 
+
                 </article>
-            </div>
+                <article  id="articles"></article>
 
-            <div class="row border-top border-2" id="events">
-                <!-- Events List prints here -->
-            </div>
+                
+            </section>
+            <aside class="sidebar col-lg-4 col-sm-4">
+                
+                <!--Where messages are being printed to-->
+                <div class="row" id="messages">
+                    <div class="row" id="message-form">
+                        <!-- New Message form prints here -->
+                    </div>
+                    <div class="container scrollable-container-sm" id="message-list">
+                        <!-- List of messages prints here -->
+                    </div>
+                </div>
+                                    
+                <div class="row border-top border-2" id="tasks">
+                    
+                        <!-- Task List Prints here -->
+                    
+                </div>
 
-        </aside>
+                <div class="row border-top border-2" id="events">
+                    <!-- Events List prints here -->
+                </div>
+
+            </aside>
+        </section>
     </main>
     <!-- Modal for Events and Articles Forms -->
     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

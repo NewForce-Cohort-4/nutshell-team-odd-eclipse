@@ -1,7 +1,7 @@
 import { saveTask } from './TaskDataProvider.js';
 import { TaskList } from './TaskList.js';
 
-const eventHub = document.querySelector(".tasklistContainer")
+const eventHub = document.querySelector("#tasks")
 
 document.querySelector("body").addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "newTaskButton") {

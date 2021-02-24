@@ -12,6 +12,9 @@ import { } from './events/eventsEventHub.js'
 
 import {TaskList} from "./Tasks/taskList.js"
 
+import { FriendList } from './friends/friendList.js'
+import { } from './friends/friendEventHub.js'
+
 export const Nutshell = () => {
 
     LogOutButton()
@@ -20,6 +23,7 @@ export const Nutshell = () => {
     ArticleList()
     eventList()
     TaskList()
+    FriendList()
 
 }
 
